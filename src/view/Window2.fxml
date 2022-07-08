@@ -6,7 +6,6 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.MotionBlur?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -28,9 +27,9 @@
                   <Image url="@images/WhatsApp_Image_2022-06-19_at_9.04.48_PM-removebg-preview.png" />
                </image>
             </ImageView>
-            <Button layoutX="14.0" layoutY="18.0" mnemonicParsing="false" onAction="#showWindow1" prefHeight="33.0" prefWidth="124.0" text="Regresar">
+            <Button layoutX="21.0" layoutY="16.0" mnemonicParsing="false" onAction="#showWindow1" prefHeight="33.0" prefWidth="124.0" style="-fx-background-color: #ffffff;" text="Salir" textFill="#143816">
                <font>
-                  <Font name="Berlin Sans FB Demi Bold" size="12.0" />
+                  <Font name="Bauhaus 93" size="20.0" />
                </font>
             </Button>
          </children>
@@ -154,15 +153,7 @@
       <Line endX="538.8666381835938" endY="-6.103515625E-5" layoutX="135.0" layoutY="525.0" startX="-135.00001525878906" strokeWidth="4.0" />
       <Line endX="872.800048828125" endY="7.62939453125E-6" layoutX="156.0" layoutY="111.0" startX="-151.99998474121094" startY="7.62939453125E-6" strokeWidth="4.0" />
       <Line endX="-47.4666748046875" endY="412.99993896484375" layoutX="723.0" layoutY="224.0" startX="-47.4666748046875" startY="-110.99999237060547" strokeWidth="4.0" />
-      <Label fx:id="labelFecha" layoutX="32.0" layoutY="78.0" prefHeight="18.0" prefWidth="143.0">
-         <font>
-            <Font size="15.0" />
-         </font>
-         <effect>
-            <MotionBlur />
-         </effect>
-      </Label>
-      <Label fx:id="labelHora" layoutX="319.0" layoutY="77.0" prefHeight="18.0" prefWidth="107.0">
+      <Label fx:id="labelHora" layoutX="345.0" layoutY="79.0" prefHeight="18.0" prefWidth="107.0">
          <font>
             <Font size="15.0" />
          </font>
@@ -172,6 +163,11 @@
             <Font size="42.0" />
          </font>
       </Label>
-      <ListView fx:id="ListView" layoutX="678.0" layoutY="176.0" prefHeight="465.0" prefWidth="347.0" />
+      <ListView fx:id="myListView" layoutX="678.0" layoutY="176.0" prefHeight="465.0" prefWidth="347.0" />
+      <Label fx:id="labelFecha" layoutX="59.0" layoutY="79.0" prefHeight="17.0" prefWidth="117.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
