@@ -1,18 +1,36 @@
-## Getting Started
+# PROYECTO: PROGRABURGUERS
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Este es el proyecto de 1er Bimestre de Programación: II
 
-## Folder Structure
+## *Integrantes*
 
-The workspace contains two folders by default, where:
+* Elian Gavilanes
+* Sebastian Roblez
+* Jorge Rojas
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## El *workspace* contiene lo siguiente
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+* `src`: la carpeta que contiene toda la progrmación del proyecto
+* `lib`: la libreria usada en este proyecto fue JavaFX
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+### Link GITHUB
 
-## Dependency Management
+>El `PROYECTO` se lo puede encontrar en el siguiente link del github [aquí](https://github.com/elian18/FirstJavaFXProject.git "FirstJavaFXProject").
+___
+A continuación se presenta ejemplo de código y diagrama de flujo
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+#### Ejemplo de codigo
+
+``` java
+FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Window1.fxml"));
+        Parent root = loader.load();
+        Scene scene = new Scene(root);
+        primaryStage.setScene(scene);
+        HomeScreenController controller = loader.getController();
+        controller.setStage(primaryStage);
+        primaryStage.show();
+```
+
+#### Diagrama de Flujo
+
+![DiagramadeFlujo](src/view/images/DiagramadeFlujo.png)
