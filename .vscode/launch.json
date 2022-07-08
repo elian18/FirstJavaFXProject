@@ -15,8 +15,8 @@
             "name": "Launch App",
             "request": "launch",
             "mainClass": "App",
-            "projectName": "FirstJavaFXProject_a2829673",
-            "vmArgs": "--module-path \"C:/Java/javafx-sdk-18.0.1/lib\" --add-modules javafx.controls,javafx.fxml",
+            "projectName": "FirstJavaFXProject-1_c36cb57",
+            "vmArgs": "--module-path \"C:/Java/javafx-sdk-18.0.1/lib\" --add-modules javafx.controls,javafx.fxml"
         }
     ]
 }
