@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="821.0" prefWidth="666.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="211.0" layoutY="63.0" text="FACTURACION">
+         <font>
+            <Font size="37.0" />
+         </font>
+      </Label>
+      <Label layoutX="61.0" layoutY="125.0" prefHeight="31.0" prefWidth="236.0" text="NOMBRE" />
+      <Label layoutX="61.0" layoutY="164.0" prefHeight="31.0" prefWidth="236.0" text="C.I." />
+      <Label layoutX="429.0" layoutY="164.0" prefHeight="31.0" prefWidth="236.0" text="TELEFONO" />
+      <Label layoutX="429.0" layoutY="125.0" prefHeight="31.0" prefWidth="236.0" text="DIRECCION" />
+      <ListView layoutX="61.0" layoutY="214.0" prefHeight="428.0" prefWidth="549.0" />
+      <Pane prefHeight="54.0" prefWidth="666.0" style="-fx-background-color: #fc0000;">
+         <children>
+            <ImageView fitHeight="54.0" fitWidth="196.0" layoutX="245.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/WhatsApp_Image_2022-06-19_at_9.04.48_PM-removebg-preview.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
