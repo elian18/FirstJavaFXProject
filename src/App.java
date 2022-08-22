@@ -1,5 +1,4 @@
 import java.io.IOException;
-
 import controller.HomeScreenController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -14,8 +13,8 @@ public class App extends Application {
         Parent root = loader.load();
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
-        HomeScreenController homeScreenController = loader.getController();
-        homeScreenController.setStage(primaryStage);
+        HomeScreenController controller = loader.getController();
+        controller.setStage(primaryStage);
         primaryStage.show();
     }
 

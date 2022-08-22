@@ -18,10 +18,9 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class MainSceneController implements Initializable {
+
     private HomeScreenController controllerWindow1;
     private Stage stage; //stage: ventana la que se visualiza
-
-
     
     @FXML
     private Spinner<Integer> countBBinaria;
@@ -99,6 +98,19 @@ public class MainSceneController implements Initializable {
         stage.close();
     }
 
+    @FXML
+    void showWindow3(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Window3.fxml"));
+        Parent root = loader.load();
+        LastSceneController controller = loader.getController();
+        Scene scene = new Scene(root);
+        Stage stage = new Stage(); // Crea la ventana
+        stage.setScene(scene);
+        controller.init(txtName.getText(), stage, this);
+        stage.show();
+        this.stage.close();
+    }
+
 
     public void init(String text, Stage stage, HomeScreenController homeScreenController) {
         lblName.setText(text = "Elian Gavilanes");
@@ -108,6 +120,9 @@ public class MainSceneController implements Initializable {
         this.stage = stage;
     }
 
+    public void show() {
+        stage.show();
+    }
 
 
 
@@ -207,21 +222,8 @@ public class MainSceneController implements Initializable {
         valueSP.setValue(0);
         countSPapa.setValueFactory(valueSP);
         countSPapa.valueProperty().addListener((obs, oldValue, newValue) ->  
-        txtPedido.setText(" SalchiPapa\t"+Integer.toString(newValue)))
+        txtPedido.setText(" SalchiPapa\t"+Integer.toString(newValue)));
 
-    }
-
-
-    @FXML
-    void showWindow3(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Window3.fxml"));
-        Parent root = loader.load();
-        LastSceneController lastSceneController = loader.getController();
-        lastSceneController.init(txtName.getText(), stage, this);
-        Stage stage = new Stage(); 
-        stage.setScene(new Scene(root));
-        stage.show();
-        this.stage.close();
     }
 
 }

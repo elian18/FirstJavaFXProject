@@ -15,6 +15,8 @@ public class LastSceneController {
 
     @FXML
     void showVentana2(ActionEvent event) {
+        controllerWindow2.show();
+        stage.close();
     }
 
     public void init(String text, Stage stage, MainSceneController mainSceneController) {

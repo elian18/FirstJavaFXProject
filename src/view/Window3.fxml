@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="1024.0" style="-fx-background-color: linear-gradient(from 70.1422% 50.7109% to 68.7204% 0.0%, #9852ee 0.0%, #d39cc1 100.0%);" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainSceneController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="1024.0" style="-fx-background-color: linear-gradient(from 70.1422% 50.7109% to 68.7204% 0.0%, #9852ee 0.0%, #d39cc1 100.0%);" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LastSceneController">
    <children>
       <Label layoutX="391.0" layoutY="29.0" text="FACTURACION">
          <font>
@@ -18,21 +18,21 @@
       </Label>
       <ImageView fitHeight="119.0" fitWidth="226.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@FirstJavaFXProject-1/src/view/images/WhatsApp_Image_2022-06-19_at_9.04.48_PM-removebg-preview.png" />
+            <Image url="@images/WhatsApp_Image_2022-06-19_at_9.04.48_PM-removebg-preview.png" />
          </image>
       </ImageView>
       <Pane layoutX="210.0" layoutY="98.0" prefHeight="101.0" prefWidth="607.0" style="-fx-background-color: #ffff;" AnchorPane.bottomAnchor="441.0" AnchorPane.leftAnchor="210.0" AnchorPane.rightAnchor="207.0" AnchorPane.topAnchor="98.0">
          <children>
             <Label layoutX="304.0" layoutY="67.0" prefHeight="31.0" prefWidth="236.0" text="DIRECCION" />
             <Label layoutX="14.0" layoutY="67.0" prefHeight="31.0" prefWidth="236.0" text="TELEFONO" />
-            <Label layoutX="14.0" layoutY="14.0" prefHeight="31.0" prefWidth="236.0" text="NOMBRE" />
+            <Label fx:id="lblNombre" layoutX="14.0" layoutY="14.0" prefHeight="31.0" prefWidth="236.0" text="NOMBRE" />
             <Label layoutX="304.0" layoutY="14.0" prefHeight="31.0" prefWidth="236.0" text="C.I." />
          </children>
       </Pane>
       <Pane layoutX="210.0" layoutY="207.0" prefHeight="280.0" prefWidth="607.0" style="-fx-background-color: #ffff;">
          <children>
             <Line endX="506.0" layoutX="100.0" layoutY="214.0" startX="-100.0" />
-            <Button layoutX="26.0" layoutY="222.0" mnemonicParsing="false" onAction="#showWindows2" prefHeight="44.0" prefWidth="91.0" style="-fx-background-color: #27c654;" text="Borrar" textAlignment="CENTER">
+            <Button layoutX="26.0" layoutY="222.0" mnemonicParsing="false" onAction="#showVentana2" prefHeight="44.0" prefWidth="91.0" style="-fx-background-color: #27c654;" text="Borrar" textAlignment="CENTER">
                <font>
                   <Font name="Leelawadee UI Bold" size="16.0" />
                </font>
