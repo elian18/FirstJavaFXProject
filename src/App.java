@@ -14,8 +14,8 @@ public class App extends Application {
         Parent root = loader.load();
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
-        HomeScreenController controller = loader.getController();
-        controller.setStage(primaryStage);
+        HomeScreenController homeScreenController = loader.getController();
+        homeScreenController.setStage(primaryStage);
         primaryStage.show();
     }
 

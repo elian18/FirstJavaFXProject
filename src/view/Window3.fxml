@@ -1,34 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="821.0" prefWidth="666.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="1024.0" style="-fx-background-color: linear-gradient(from 70.1422% 50.7109% to 68.7204% 0.0%, #9852ee 0.0%, #d39cc1 100.0%);" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainSceneController">
    <children>
-      <Label layoutX="211.0" layoutY="63.0" text="FACTURACION">
+      <Label layoutX="391.0" layoutY="29.0" text="FACTURACION">
          <font>
             <Font size="37.0" />
          </font>
       </Label>
-      <Label layoutX="61.0" layoutY="125.0" prefHeight="31.0" prefWidth="236.0" text="NOMBRE" />
-      <Label layoutX="61.0" layoutY="164.0" prefHeight="31.0" prefWidth="236.0" text="C.I." />
-      <Label layoutX="429.0" layoutY="164.0" prefHeight="31.0" prefWidth="236.0" text="TELEFONO" />
-      <Label layoutX="429.0" layoutY="125.0" prefHeight="31.0" prefWidth="236.0" text="DIRECCION" />
-      <ListView layoutX="61.0" layoutY="214.0" prefHeight="428.0" prefWidth="549.0" />
-      <Pane prefHeight="54.0" prefWidth="666.0" style="-fx-background-color: #fc0000;">
+      <ImageView fitHeight="119.0" fitWidth="226.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@FirstJavaFXProject-1/src/view/images/WhatsApp_Image_2022-06-19_at_9.04.48_PM-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="210.0" layoutY="98.0" prefHeight="101.0" prefWidth="607.0" style="-fx-background-color: #ffff;" AnchorPane.bottomAnchor="441.0" AnchorPane.leftAnchor="210.0" AnchorPane.rightAnchor="207.0" AnchorPane.topAnchor="98.0">
          <children>
-            <ImageView fitHeight="54.0" fitWidth="196.0" layoutX="245.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@images/WhatsApp_Image_2022-06-19_at_9.04.48_PM-removebg-preview.png" />
-               </image>
-            </ImageView>
+            <Label layoutX="304.0" layoutY="67.0" prefHeight="31.0" prefWidth="236.0" text="DIRECCION" />
+            <Label layoutX="14.0" layoutY="67.0" prefHeight="31.0" prefWidth="236.0" text="TELEFONO" />
+            <Label layoutX="14.0" layoutY="14.0" prefHeight="31.0" prefWidth="236.0" text="NOMBRE" />
+            <Label layoutX="304.0" layoutY="14.0" prefHeight="31.0" prefWidth="236.0" text="C.I." />
          </children>
       </Pane>
+      <Pane layoutX="210.0" layoutY="207.0" prefHeight="280.0" prefWidth="607.0" style="-fx-background-color: #ffff;">
+         <children>
+            <Line endX="506.0" layoutX="100.0" layoutY="214.0" startX="-100.0" />
+            <Button layoutX="26.0" layoutY="222.0" mnemonicParsing="false" onAction="#showWindows2" prefHeight="44.0" prefWidth="91.0" style="-fx-background-color: #27c654;" text="Borrar" textAlignment="CENTER">
+               <font>
+                  <Font name="Leelawadee UI Bold" size="16.0" />
+               </font>
+            </Button>
+            <Button layoutX="489.0" layoutY="222.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="91.0" style="-fx-background-color: #27c654;" text="Editar" textAlignment="CENTER">
+               <font>
+                  <Font name="Leelawadee UI Bold" size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Pane layoutX="210.0" layoutY="487.0" prefHeight="44.0" prefWidth="607.0" style="-fx-background-color: #ff0000;">
+         <children>
+            <Label layoutX="161.0" prefHeight="46.0" prefWidth="195.0" text="IVA: $ " textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Semibold" size="31.0" />
+               </font>
+            </Label>
+            <Line endX="51.0" endY="30.0" layoutX="320.0" layoutY="14.0" startX="51.0" startY="-12.0" stroke="WHITE" />
+            <Label layoutX="383.0" prefHeight="46.0" prefWidth="195.0" text="TOTAL: $ " textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI Semibold" size="31.0" />
+               </font>
+            </Label>
+         </children></Pane>
+      <Button layoutX="811.0" layoutY="563.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="161.0" style="-fx-background-color: #27c654;" text="IMPRIMIR">
+         <font>
+            <Font name="Leelawadee UI Bold" size="16.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

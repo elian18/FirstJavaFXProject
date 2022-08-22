@@ -53,11 +53,10 @@ public class HomeScreenController {
             if(txtPasword.getText().equalsIgnoreCase("admin")){//comparar inicio de sesion
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Window2.fxml"));
                 Parent root = loader.load();
-                MainSceneController controller = loader.getController();
-                Scene scene = new Scene(root);
-                Stage stage = new Stage();      // Crea nueva ventana
-                stage.setScene(scene);
-                controller.init(txtUser.getText(), stage, this);
+                MainSceneController mainSceneController = loader.getController();
+                mainSceneController.init(txtUser.getText(), stage, this);
+                Stage stage = new Stage(); 
+                stage.setScene(new Scene(root));
                 stage.show();
                 this.stage.close();   
                 }
