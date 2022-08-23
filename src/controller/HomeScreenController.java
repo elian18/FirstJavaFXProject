@@ -50,8 +50,10 @@ public class HomeScreenController {
      */
     @FXML
     void showWindow2(ActionEvent event) throws IOException {
-        if(txtUser.getText().equalsIgnoreCase("admin")  ){
-            if(txtPasword.getText().equalsIgnoreCase("admin")){//comparar inicio de sesion
+        if((txtUser.getText().equals("elian18") && txtPasword.getText().equals("elian") )||  
+        (txtUser.getText().equals("SebasRo17")&&txtPasword.getText().equals("sebas")) || 
+        (txtUser.getText().equals("JoRoX")&&txtPasword.getText().equals("epngood"))){
+            {//comparar inicio de sesion
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Window2.fxml"));
                 Parent root = loader.load();
                 MainSceneController controller = loader.getController();
@@ -65,6 +67,7 @@ public class HomeScreenController {
             }else{
                 JOptionPane.showMessageDialog(null, "Usuario y/o contraseña incorrecta");
             }
+            
         }
 
     public void setStage(Stage primaryStage) {

@@ -15,7 +15,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="1024.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainSceneController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainSceneController">
    <children>
       <Label layoutX="22.0" layoutY="525.0" prefHeight="36.0" prefWidth="191.0" text="Datos del cliente">
          <font>
@@ -175,9 +175,9 @@
       <Line endX="538.8666381835938" endY="-6.103515625E-5" layoutX="135.0" layoutY="525.0" startX="-135.00001525878906" strokeWidth="4.0" />
       <Line endX="872.800048828125" endY="7.62939453125E-6" layoutX="156.0" layoutY="111.0" startX="-151.99998474121094" startY="7.62939453125E-6" strokeWidth="4.0" />
       <Line endX="-47.4666748046875" endY="412.99993896484375" layoutX="723.0" layoutY="224.0" startX="-47.4666748046875" startY="-110.99999237060547" strokeWidth="4.0" />
-      <Label contentDisplay="CENTER" layoutX="780.0" layoutY="120.0" prefHeight="36.0" prefWidth="166.0" text="PEDIDO">
+      <Label contentDisplay="CENTER" layoutX="815.0" layoutY="113.0" prefHeight="43.0" prefWidth="110.0" text="PEDIDO" textAlignment="CENTER">
          <font>
-            <Font size="42.0" />
+            <Font size="29.0" />
          </font>
       </Label>
       <Label fx:id="labelFecha" layoutX="59.0" layoutY="79.0" prefHeight="17.0" prefWidth="117.0">
@@ -186,6 +186,32 @@
          </font>
       </Label>
       <Accordion />
-      <TextArea fx:id="txtPedido" editable="false" layoutX="679.0" layoutY="182.0" prefHeight="454.0" prefWidth="341.0" />
+      <TextArea fx:id="txtPedido" editable="false" layoutX="679.0" layoutY="182.0" prefHeight="402.0" prefWidth="191.0" style="-fx-border-color: #000000;" />
+      <Label fx:id="lblTotal" layoutX="849.0" layoutY="591.0" prefHeight="37.0" prefWidth="166.0" style="-fx-border-color: #000000; -fx-background-color: #ffff;" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="29.0" />
+         </font></Label>
+      <Button layoutX="698.0" layoutY="591.0" mnemonicParsing="false" onAction="#sumarPedidos" prefHeight="44.0" prefWidth="100.0" style="-fx-background-color: #3549a4;" text="TOTAL" textFill="WHITE">
+         <font>
+            <Font name="Monospaced Bold" size="20.0" />
+         </font>
+      </Button>
+      <TextArea fx:id="txtCant" layoutX="874.0" layoutY="182.0" prefHeight="402.0" prefWidth="54.0" style="-fx-border-color: #000000;" />
+      <TextArea fx:id="txtPrice" layoutX="932.0" layoutY="182.0" prefHeight="402.0" prefWidth="85.0" style="-fx-border-color: #000000;" />
+      <Label layoutX="737.0" layoutY="156.0" prefHeight="21.0" prefWidth="76.0" text="PRODUCTO">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="874.0" layoutY="156.0" prefHeight="21.0" prefWidth="54.0" text="CANTIDAD">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Label layoutX="948.0" layoutY="156.0" prefHeight="21.0" prefWidth="54.0" text="PRECIO">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

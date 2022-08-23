@@ -23,10 +23,10 @@
       </ImageView>
       <Pane layoutX="210.0" layoutY="98.0" prefHeight="101.0" prefWidth="607.0" style="-fx-background-color: #ffff;" AnchorPane.bottomAnchor="441.0" AnchorPane.leftAnchor="210.0" AnchorPane.rightAnchor="207.0" AnchorPane.topAnchor="98.0">
          <children>
-            <Label layoutX="304.0" layoutY="67.0" prefHeight="31.0" prefWidth="236.0" text="DIRECCION" />
-            <Label layoutX="14.0" layoutY="67.0" prefHeight="31.0" prefWidth="236.0" text="TELEFONO" />
+            <Label fx:id="lblDireccion" layoutX="304.0" layoutY="67.0" prefHeight="31.0" prefWidth="236.0" text="DIRECCION" />
+            <Label fx:id="lblPhone" layoutX="14.0" layoutY="67.0" prefHeight="31.0" prefWidth="236.0" text="TELEFONO" />
             <Label fx:id="lblNombre" layoutX="14.0" layoutY="14.0" prefHeight="31.0" prefWidth="236.0" text="NOMBRE" />
-            <Label layoutX="304.0" layoutY="14.0" prefHeight="31.0" prefWidth="236.0" text="C.I." />
+            <Label fx:id="lblCI" layoutX="304.0" layoutY="14.0" prefHeight="31.0" prefWidth="236.0" text="C.I." />
          </children>
       </Pane>
       <Pane layoutX="210.0" layoutY="207.0" prefHeight="280.0" prefWidth="607.0" style="-fx-background-color: #ffff;">

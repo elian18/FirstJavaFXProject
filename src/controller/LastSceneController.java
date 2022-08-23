@@ -11,7 +11,16 @@ public class LastSceneController {
     private Stage stage;
 
     @FXML
+    private Label lblCI;
+
+    @FXML
+    private Label lblDireccion;
+
+    @FXML
     private Label lblNombre;
+
+    @FXML
+    private Label lblPhone;
 
     @FXML
     void showVentana2(ActionEvent event) {
@@ -19,10 +28,11 @@ public class LastSceneController {
         stage.close();
     }
 
-    public void init(String text, Stage stage, MainSceneController mainSceneController) {
-        lblNombre.setText(text);
-        this.controllerWindow2 = mainSceneController;
-        this.stage = stage;
+    public void displayDatos(String nombre, String ci, String direccion, String phone) {
+        lblNombre.setText(nombre);
+        lblCI.setText(ci);
+        lblDireccion.setText(direccion);
+        lblPhone.setText(phone);
     }
 
 }
