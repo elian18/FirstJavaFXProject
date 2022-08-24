@@ -3,6 +3,7 @@ package controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 
 public class LastSceneController {
@@ -23,6 +24,23 @@ public class LastSceneController {
     private Label lblPhone;
 
     @FXML
+    private TextArea txtMostrarCantidad;
+
+    @FXML
+    private Label txtMostrarIVA;
+
+    @FXML
+    private TextArea txtMostrarPedido;
+
+    @FXML
+    private TextArea txtMostrarPrecio;
+
+    @FXML
+    private Label txtMostrarTotal;
+
+
+
+    @FXML
     void showVentana2(ActionEvent event) {
         controllerWindow2.show();
         stage.close();
@@ -35,6 +53,13 @@ public class LastSceneController {
         lblPhone.setText(phone);
         this.controllerWindow2 = mainSceneController;
         this.stage = stage;
+    }
+
+    public void displayPedido(String cantidad, String pedido, String precio, String total){
+        txtMostrarCantidad.setText(cantidad);
+        txtMostrarPedido.setText(pedido);
+        txtMostrarPrecio.setText(precio);
+        txtMostrarTotal.setText(total);
     }
 
 }

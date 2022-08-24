@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -21,7 +22,7 @@
             <Image url="@images/WhatsApp_Image_2022-06-19_at_9.04.48_PM-removebg-preview.png" />
          </image>
       </ImageView>
-      <Pane layoutX="210.0" layoutY="98.0" prefHeight="101.0" prefWidth="607.0" style="-fx-background-color: #ffff;" AnchorPane.bottomAnchor="441.0" AnchorPane.leftAnchor="210.0" AnchorPane.rightAnchor="207.0" AnchorPane.topAnchor="98.0">
+      <Pane layoutX="210.0" layoutY="98.0" prefHeight="101.0" prefWidth="607.0" style="-fx-background-color: white; -fx-background-radius: 5; -fx-padding: 10; -fx-border-style: solid inside; -fx-border-width: 2; -fx-border-insets: 2; -fx-border-radius: 5; -fx-border-color: blue;" AnchorPane.bottomAnchor="441.0" AnchorPane.leftAnchor="210.0" AnchorPane.rightAnchor="207.0" AnchorPane.topAnchor="98.0">
          <children>
             <Label fx:id="lblDireccion" layoutX="304.0" layoutY="67.0" prefHeight="31.0" prefWidth="236.0" text="DIRECCION" />
             <Label fx:id="lblPhone" layoutX="14.0" layoutY="67.0" prefHeight="31.0" prefWidth="236.0" text="TELEFONO" />
@@ -29,7 +30,7 @@
             <Label fx:id="lblCI" layoutX="304.0" layoutY="14.0" prefHeight="31.0" prefWidth="236.0" text="C.I." />
          </children>
       </Pane>
-      <Pane layoutX="210.0" layoutY="207.0" prefHeight="280.0" prefWidth="607.0" style="-fx-background-color: #ffff;">
+      <Pane layoutX="210.0" layoutY="207.0" prefHeight="280.0" prefWidth="607.0" style="-fx-background-color: white; -fx-background-radius: 5;">
          <children>
             <Line endX="506.0" layoutX="100.0" layoutY="214.0" startX="-100.0" />
             <Button layoutX="26.0" layoutY="222.0" mnemonicParsing="false" onAction="#showVentana2" prefHeight="44.0" prefWidth="91.0" style="-fx-background-color: #27c654;" text="Borrar" textAlignment="CENTER">
@@ -42,17 +43,20 @@
                   <Font name="Leelawadee UI Bold" size="16.0" />
                </font>
             </Button>
+            <TextArea fx:id="txtMostrarPedido" layoutX="6.0" layoutY="7.0" prefHeight="200.0" prefWidth="341.0" style="-fx-background-color: white; -fx-border-style: solid inside; -fx-border-width: 2; -fx-border-insets: 2; -fx-border-radius: 5; -fx-border-color: blue;" />
+            <TextArea fx:id="txtMostrarCantidad" layoutX="354.0" layoutY="7.0" prefHeight="200.0" prefWidth="91.0" style="-fx-background-color: white; -fx-border-style: solid inside; -fx-border-width: 2; -fx-border-insets: 2; -fx-border-radius: 5; -fx-border-color: blue;" />
+            <TextArea fx:id="txtMostrarPrecio" layoutX="451.0" layoutY="7.0" prefHeight="200.0" prefWidth="149.0" style="-fx-background-color: white; -fx-border-style: solid inside; -fx-border-width: 2; -fx-background-insets: 2; -fx-border-radius: 5; -fx-border-color: blue;" />
          </children>
       </Pane>
-      <Pane layoutX="210.0" layoutY="487.0" prefHeight="44.0" prefWidth="607.0" style="-fx-background-color: #ff0000;">
+      <Pane layoutX="210.0" layoutY="487.0" prefHeight="44.0" prefWidth="607.0" style="-fx-background-color: #ff0000; -fx-background-radius: 5;">
          <children>
-            <Label layoutX="161.0" prefHeight="46.0" prefWidth="195.0" text="IVA: $ " textFill="WHITE">
+            <Line endX="51.0" endY="30.0" layoutX="301.0" layoutY="13.0" startX="51.0" startY="-12.0" stroke="WHITE" />
+            <Label layoutX="360.0" layoutY="-1.0" prefHeight="46.0" prefWidth="138.0" text="TOTAL: $ " textFill="WHITE">
                <font>
                   <Font name="Segoe UI Semibold" size="31.0" />
                </font>
             </Label>
-            <Line endX="51.0" endY="30.0" layoutX="320.0" layoutY="14.0" startX="51.0" startY="-12.0" stroke="WHITE" />
-            <Label layoutX="383.0" prefHeight="46.0" prefWidth="195.0" text="TOTAL: $ " textFill="WHITE">
+            <Label fx:id="txtMostrarTotal" layoutX="498.0" prefHeight="46.0" prefWidth="97.0" textFill="WHITE">
                <font>
                   <Font name="Segoe UI Semibold" size="31.0" />
                </font>

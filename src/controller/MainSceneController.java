@@ -22,115 +22,113 @@ import javafx.stage.Stage;
 
 public class MainSceneController implements Initializable {
 
-    private HomeScreenController controllerWindow1;
-    private Stage stage; //stage: ventana la que se visualiza
-    MainSceneController mainSceneController;
-    private volatile boolean stop = false;
+private HomeScreenController controllerWindow1;
+private Stage stage; //stage: ventana la que se visualiza
+MainSceneController mainSceneController;
+private volatile boolean stop = false;
 
-    private double HS;
-    private double BB;
-    private double CC;
-    private double BD;
-    private double F;
-    private double HD;
-    private double JB;
-    private double MP;
-    private double P;
-    private double PB;
-    private double PG;
-    private double PM;
-    private double PP;
-    private double S;
-    private double SP;
-    
-    
-    
-    @FXML
-    private Spinner<Integer> countBBinaria;
+private double HS;
+private double BB;
+private double CC;
+private double BD;
+private double F;
+private double HD;
+private double JB;
+private double MP;
+private double P;
+private double PB;
+private double PG;
+private double PM;
+private double PP;
+private double S;
+private double SP;
 
-    @FXML
-    private Spinner<Integer> countCC;
+@FXML
+private Spinner<Integer> countBBinaria;
 
-    @FXML
-    private Spinner<Integer> countD;
+@FXML
+private Spinner<Integer> countCC;
 
-    @FXML
-    private Spinner<Integer> countF;
+@FXML
+private Spinner<Integer> countD;
 
-    @FXML
-    private Spinner<Integer> countHDoble;
+@FXML
+private Spinner<Integer> countF;
 
-    @FXML
-    private Spinner<Integer> countHSimple;
+@FXML
+private Spinner<Integer> countHDoble;
 
-    @FXML
-    private Spinner<Integer> countJBurguer;
+@FXML
+private Spinner<Integer> countHSimple;
 
-    @FXML
-    private Spinner<Integer> countMPapas;
+@FXML
+private Spinner<Integer> countJBurguer;
 
-    @FXML
-    private Spinner<Integer> countP;
+@FXML
+private Spinner<Integer> countMPapas;
 
-    @FXML
-    private Spinner<Integer> countPBurguer;
+@FXML
+private Spinner<Integer> countP;
 
-    @FXML
-    private Spinner<Integer> countPGrandes;
+@FXML
+private Spinner<Integer> countPBurguer;
 
-    @FXML
-    private Spinner<Integer> countPMedianas;
+@FXML
+private Spinner<Integer> countPGrandes;
 
-    @FXML
-    private Spinner<Integer> countPPequenas;
+@FXML
+private Spinner<Integer> countPMedianas;
 
-    @FXML
-    private Spinner<Integer> countS;
+@FXML
+private Spinner<Integer> countPPequenas;
 
-    @FXML
-    private Spinner<Integer> countSPapa;
+@FXML
+private Spinner<Integer> countS;
+
+@FXML
+private Spinner<Integer> countSPapa;
         
-    @FXML
-    private Label labelFecha;
-    
-    @FXML
-    private Label lblTime;
+@FXML
+private Label labelFecha;
 
-    @FXML
-    private Label lblName;
+@FXML
+private Label lblTime;
 
-    @FXML
-    private TextField txtAdress;
+@FXML
+private Label lblName;
 
-    @FXML
-    private TextField txtCI;
+@FXML
+private TextField txtAdress;
 
-    @FXML
-    private TextField txtName;
+@FXML
+private TextField txtCI;
 
-    @FXML
-    private TextField txtPhone;
+@FXML
+private TextField txtName;
 
-    @FXML
-    private TextArea txtPedido;
+@FXML
+private TextField txtPhone;
 
-    @FXML
-    private Label lblTotal;
+@FXML
+private TextArea txtPedido;
 
-    @FXML
-    private TextArea txtCant;
+@FXML
+private Label lblTotal;
 
-    @FXML
-    private TextArea txtPrice;
+@FXML
+private TextArea txtCant;
 
-    @FXML
-    void showWindow1(ActionEvent event) {
+@FXML
+private TextArea txtPrice;
+
+@FXML
+void showWindow1(ActionEvent event) {
         controllerWindow1.show();
         stage.close();
-    }
+}
 
-    @FXML
-    void showWindow3(ActionEvent event) throws IOException {
+@FXML
+void showWindow3(ActionEvent event) throws IOException {
         stop = true;
         String nombre = txtName.getText();
         String ci = txtCI.getText();
@@ -140,31 +138,36 @@ public class MainSceneController implements Initializable {
         Parent root = loader.load();
         LastSceneController controller = loader.getController();
         controller.displayDatos(nombre, ci, direccion, phone, stage, this);
+        String cantidad = txtCant.getText();
+        String pedido = txtPedido.getText();
+        String precio = txtPrice.getText();
+        String total = lblTotal.getText();
+
+        controller.displayPedido(cantidad, pedido, precio, total);
         Scene scene = new Scene(root);
         Stage stage = new Stage(); // Crea la ventana
         stage.setScene(scene);
         stage.show();
         this.stage.close();
-    }
+}
 
-    
-    @FXML
-    void sumarPedidos(ActionEvent event) {
+
+@FXML
+void sumarPedidos(ActionEvent event) {
         Double suma = HS+BB+CC+BD+F+HD+JB+MP+P+PB+PG+PM+PP+S+SP;
         String total = suma.toString();
         lblTotal.setText(total);
-    }
+}
 
-
-    public void init(String text, Stage stage, HomeScreenController homeScreenController) {
+public void init(String text, Stage stage, HomeScreenController homeScreenController) {
         lblName.setText(text);
         String fecha = String.format("%s", LocalDate.now());
         labelFecha.setText(fecha);
         this.controllerWindow1 = homeScreenController;
         this.stage = stage;
-    }
+        }
 
-    public void showTime() {
+public void showTime() {
         Thread thread = new Thread(() ->{
                 SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss a");
                 while (!stop) {
@@ -180,35 +183,49 @@ public class MainSceneController implements Initializable {
                 }
         });
         thread.start();
-    }
+}
 
-    public void show() {
+public void show() {
         stage.show();
-    }
+}
 
 
-    @Override
-    public void initialize(URL arg0, ResourceBundle arg1) {
+@Override
+public void initialize(URL arg0, ResourceBundle arg1) {
         showTime();
 
-        SpinnerValueFactory<Integer> valueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 50);
-        valueFactory.setValue(0);
-        countHSimple.setValueFactory(valueFactory);
+        
+        SpinnerValueFactory<Integer> valueSimple = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 50);
+        valueSimple.setValue(0);
+        countHSimple.setValueFactory(valueSimple);
         countHSimple.valueProperty().addListener((obs, oldValue, newValue) -> {
-            HS = 1*newValue;
+        HS = 1*newValue;
+                txtPedido.appendText("");
+                txtCant.appendText("");
+                txtPrice.appendText("");
                 txtPedido.appendText("Hamburguesa simple\n" );
                 txtCant.appendText(Integer.toString(newValue)+"\n");
                 txtPrice.appendText("$"+HS+"\n");
+                txtPedido.appendText("\n");
+                txtCant.appendText("\n");
+                txtPrice.appendText("\n");
+
         });
         
         SpinnerValueFactory<Integer> valueBinaria = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 50);
         valueBinaria.setValue(0);
         countBBinaria.setValueFactory(valueBinaria);
         countBBinaria.valueProperty().addListener((obs, oldValue, newValue) ->  {
-            BB = 1.75*newValue;
+        BB = 1.75*newValue;
+                txtPedido.appendText("");
+                txtCant.appendText("");
+                txtPrice.appendText("");
                 txtPedido.appendText("Burguer Binaria\n" );
                 txtCant.appendText(Integer.toString(newValue)+"\n");
-                txtPrice.appendText("$"+BB+"\n");       
+                txtPrice.appendText("$"+BB+"\n");    
+                txtPedido.appendText("\n");
+                txtCant.appendText("\n");
+                txtPrice.appendText("\n");  
         }); 
 
         SpinnerValueFactory<Integer> valueCC = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 50);
@@ -216,6 +233,9 @@ public class MainSceneController implements Initializable {
         countCC.setValueFactory(valueCC);
         countCC.valueProperty().addListener((obs, oldValue, newValue) ->  {
         CC = 1.5*newValue;
+                txtPedido.setText("");
+                txtCant.setText("");
+                txtPrice.setText("");
                 txtPedido.appendText("CocaCola\n" );
                 txtCant.appendText(Integer.toString(newValue)+"\n");
                 txtPrice.appendText("$"+CC+"\n");
@@ -226,6 +246,9 @@ public class MainSceneController implements Initializable {
         countD.setValueFactory(valueD);
         countD.valueProperty().addListener((obs, oldValue, newValue) ->  {
         BD = 1.75*newValue;    
+                txtPedido.setText("");
+                txtCant.setText("");
+                txtPrice.setText("");
                 txtPedido.appendText("Bebida dietetica\n" );
                 txtCant.appendText(Integer.toString(newValue)+"\n");
                 txtPrice.appendText("$"+BD+"\n");  
@@ -237,6 +260,9 @@ public class MainSceneController implements Initializable {
         countF.setValueFactory(valueF);
         countF.valueProperty().addListener((obs, oldValue, newValue) ->  {
         F = 1.50*newValue;    
+                txtPedido.setText("");
+                txtCant.setText("");
+                txtPrice.setText("");
                 txtPedido.appendText("Fanta\n" );
                 txtCant.appendText(Integer.toString(newValue)+"\n");
                 txtPrice.appendText("$"+F+"\n"); 
@@ -248,6 +274,9 @@ public class MainSceneController implements Initializable {
         countHDoble.setValueFactory(valueHD);
         countHDoble.valueProperty().addListener((obs, oldValue, newValue) ->   {
         HD = 2.25*newValue; 
+                txtPedido.setText("");
+                txtCant.setText("");
+                txtPrice.setText("");
                 txtPedido.appendText("Hamburguesa Doble\n" );
                 txtCant.appendText(Integer.toString(newValue)+"\n");
                 txtPrice.appendText("$"+HD+"\n");  
@@ -258,6 +287,9 @@ public class MainSceneController implements Initializable {
         countJBurguer.setValueFactory(valueJB);
         countJBurguer.valueProperty().addListener((obs, oldValue, newValue) ->   {
         JB = 2.50*newValue; 
+                txtPedido.setText("");
+                txtCant.setText("");
+                txtPrice.setText("");
                 txtPedido.appendText("JavaBurguer\n" );
                 txtCant.appendText(Integer.toString(newValue)+"\n");
                 txtPrice.appendText("$"+JB+"\n"); 
@@ -268,6 +300,9 @@ public class MainSceneController implements Initializable {
         countMPapas.setValueFactory(valueMP);
         countMPapas.valueProperty().addListener((obs, oldValue, newValue) ->  {
         MP = 1.50*newValue; 
+                txtPedido.setText("");
+                txtCant.setText("");
+                txtPrice.setText("");
                 txtPedido.appendText("MolliPapas\n" );
                 txtCant.appendText(Integer.toString(newValue)+"\n");
                 txtPrice.appendText("$"+MP+"\n");  
@@ -279,9 +314,13 @@ public class MainSceneController implements Initializable {
         countP.setValueFactory(valueP);
         countP.valueProperty().addListener((obs, oldValue, newValue) -> {
         P = 1.50*newValue;  
+                txtPedido.setText("");
+                txtCant.setText("");
+                txtPrice.setText("");
                 txtPedido.appendText("Pepsi\n" );
                 txtCant.appendText(Integer.toString(newValue)+"\n");
-                txtPrice.appendText("$"+P+"\n"); 
+                txtPrice.appendText("$"+P+"\n");
+                
         }); 
         
 
@@ -290,6 +329,9 @@ public class MainSceneController implements Initializable {
         countPBurguer.setValueFactory(valuePB);
         countPBurguer.valueProperty().addListener((obs, oldValue, newValue) -> {
         PB = 2.50*newValue;
+                txtPedido.setText("");
+                txtCant.setText("");
+                txtPrice.setText("");
                 txtPedido.appendText("PrograBurguer\n" );
                 txtCant.appendText(Integer.toString(newValue)+"\n");
                 txtPrice.appendText("$"+PB+"\n"); 
@@ -301,6 +343,9 @@ public class MainSceneController implements Initializable {
         countPGrandes.setValueFactory(valuePG);
         countPGrandes.valueProperty().addListener((obs, oldValue, newValue) ->  {
         PG = 2.00*newValue;
+                txtPedido.setText("");
+                txtCant.setText("");
+                txtPrice.setText("");
                 txtPedido.appendText("Papas Grandes\n" );
                 txtCant.appendText(Integer.toString(newValue)+"\n");
                 txtPrice.appendText("$"+PG+"\n");  
@@ -311,7 +356,10 @@ public class MainSceneController implements Initializable {
         valuePM.setValue(0);
         countPMedianas.setValueFactory(valuePM);
         countPMedianas.valueProperty().addListener((obs, oldValue, newValue) -> {
-        PM = 1.50*newValue; 
+        PM = 1.50*newValue;
+                txtPedido.setText("");
+                txtCant.setText("");
+                txtPrice.setText("");
                 txtPedido.appendText("Papas Medianas\n" );
                 txtCant.appendText(Integer.toString(newValue)+"\n");
                 txtPrice.appendText("$"+PM+"\n");  
@@ -322,7 +370,10 @@ public class MainSceneController implements Initializable {
         valuePP.setValue(0);
         countPPequenas.setValueFactory(valuePP);
         countPPequenas.valueProperty().addListener((obs, oldValue, newValue) ->{
-        PP = 1.50*newValue;   
+        PP = 1.50*newValue;
+                txtPedido.setText("");
+                txtCant.setText("");
+                txtPrice.setText("");  
                 txtPedido.appendText("Papas Pequeñas \n");
                 txtCant.appendText(Integer.toString(newValue)+"\n");
                 txtPrice.appendText("$"+PP+"\n");
@@ -334,6 +385,9 @@ public class MainSceneController implements Initializable {
         countS.setValueFactory(valueS);
         countS.valueProperty().addListener((obs, oldValue, newValue) ->  {
         S = 1.00*newValue;
+                txtPedido.setText("");
+                txtCant.setText("");
+                txtPrice.setText("");
                 txtPedido.appendText("Sprite \n");
                 txtCant.appendText(Integer.toString(newValue)+"\n");
                 txtPrice.appendText("$"+S+"\n");
@@ -344,8 +398,11 @@ public class MainSceneController implements Initializable {
         countSPapa.setValueFactory(valueSP);
         countSPapa.valueProperty().addListener((obs, oldValue, newValue) ->  {
         SP = 1.00*newValue;
+                txtPedido.setText("");
+                txtCant.setText("");
+                txtPrice.setText("");
                 txtPedido.appendText("SalchiPapa\n");
                 txtCant.appendText(Integer.toString(newValue)+"\n");
                 txtPrice.appendText("$"+SP+"\n");
         }); 
-    }}
+}}

@@ -196,8 +196,8 @@
             <Font name="Monospaced Bold" size="20.0" />
          </font>
       </Button>
-      <TextArea fx:id="txtCant" layoutX="874.0" layoutY="182.0" prefHeight="402.0" prefWidth="54.0" style="-fx-border-color: #000000;" />
-      <TextArea fx:id="txtPrice" layoutX="932.0" layoutY="182.0" prefHeight="402.0" prefWidth="85.0" style="-fx-border-color: #000000;" />
+      <TextArea fx:id="txtCant" editable="false" layoutX="874.0" layoutY="182.0" prefHeight="402.0" prefWidth="54.0" style="-fx-border-color: #000000;" />
+      <TextArea fx:id="txtPrice" editable="false" layoutX="932.0" layoutY="182.0" prefHeight="402.0" prefWidth="85.0" style="-fx-border-color: #000000;" />
       <Label layoutX="737.0" layoutY="156.0" prefHeight="21.0" prefWidth="76.0" text="PRODUCTO">
          <font>
             <Font size="14.0" />

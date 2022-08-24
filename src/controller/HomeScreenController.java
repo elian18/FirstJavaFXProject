@@ -1,9 +1,7 @@
 package controller;
 
 import java.io.IOException;
-
 import javax.swing.JOptionPane;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
