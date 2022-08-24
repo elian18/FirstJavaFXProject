@@ -180,9 +180,9 @@
             <Font size="29.0" />
          </font>
       </Label>
-      <Label fx:id="labelFecha" layoutX="59.0" layoutY="79.0" prefHeight="17.0" prefWidth="117.0">
+      <Label fx:id="labelFecha" layoutX="59.0" layoutY="79.0" prefHeight="17.0" prefWidth="117.0" textAlignment="CENTER">
          <font>
-            <Font size="15.0" />
+            <Font name="Franklin Gothic Medium" size="20.0" />
          </font>
       </Label>
       <Accordion />
@@ -211,6 +211,11 @@
       <Label layoutX="948.0" layoutY="156.0" prefHeight="21.0" prefWidth="54.0" text="PRECIO">
          <font>
             <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblTime" layoutX="363.0" layoutY="79.0" prefHeight="17.0" prefWidth="117.0">
+         <font>
+            <Font name="Franklin Gothic Medium" size="20.0" />
          </font>
       </Label>
    </children>

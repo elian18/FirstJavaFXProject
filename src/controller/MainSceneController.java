@@ -2,8 +2,11 @@ package controller;
 
 import java.io.IOException;
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.ResourceBundle;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -21,6 +24,9 @@ public class MainSceneController implements Initializable {
 
     private HomeScreenController controllerWindow1;
     private Stage stage; //stage: ventana la que se visualiza
+    MainSceneController mainSceneController;
+    private volatile boolean stop = false;
+
     private double HS;
     private double BB;
     private double CC;
@@ -88,7 +94,7 @@ public class MainSceneController implements Initializable {
     private Label labelFecha;
     
     @FXML
-    private Label labelHora;
+    private Label lblTime;
 
     @FXML
     private Label lblName;
@@ -125,19 +131,15 @@ public class MainSceneController implements Initializable {
 
     @FXML
     void showWindow3(ActionEvent event) throws IOException {
-
+        stop = true;
         String nombre = txtName.getText();
         String ci = txtCI.getText();
         String direccion = txtAdress.getText();
         String phone = txtPhone.getText();
-
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Window3.fxml"));
         Parent root = loader.load();
-
         LastSceneController controller = loader.getController();
-
-        controller.displayDatos(nombre, ci, direccion, phone);
-
+        controller.displayDatos(nombre, ci, direccion, phone, stage, this);
         Scene scene = new Scene(root);
         Stage stage = new Stage(); // Crea la ventana
         stage.setScene(scene);
@@ -162,6 +164,24 @@ public class MainSceneController implements Initializable {
         this.stage = stage;
     }
 
+    public void showTime() {
+        Thread thread = new Thread(() ->{
+                SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss a");
+                while (!stop) {
+                        try {
+                                Thread.sleep(1000);
+                        } catch (Exception e) {
+                                System.out.println("e");
+                        }
+                        final String showTime = sdf.format(new Date());
+                        Platform.runLater(()->{
+                                lblTime.setText(showTime);
+                        });
+                }
+        });
+        thread.start();
+    }
+
     public void show() {
         stage.show();
     }
@@ -169,6 +189,8 @@ public class MainSceneController implements Initializable {
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
+        showTime();
+
         SpinnerValueFactory<Integer> valueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 50);
         valueFactory.setValue(0);
         countHSimple.setValueFactory(valueFactory);

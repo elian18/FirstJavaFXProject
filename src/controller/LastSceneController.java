@@ -28,11 +28,13 @@ public class LastSceneController {
         stage.close();
     }
 
-    public void displayDatos(String nombre, String ci, String direccion, String phone) {
+    public void displayDatos(String nombre, String ci, String direccion, String phone, Stage stage, MainSceneController mainSceneController) {
         lblNombre.setText(nombre);
         lblCI.setText(ci);
         lblDireccion.setText(direccion);
         lblPhone.setText(phone);
+        this.controllerWindow2 = mainSceneController;
+        this.stage = stage;
     }
 
 }
