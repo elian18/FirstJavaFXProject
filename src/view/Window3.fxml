@@ -43,9 +43,9 @@
                   <Font name="Leelawadee UI Bold" size="16.0" />
                </font>
             </Button>
-            <TextArea fx:id="txtMostrarPedido" layoutX="6.0" layoutY="7.0" prefHeight="200.0" prefWidth="341.0" style="-fx-background-color: white; -fx-border-style: solid inside; -fx-border-width: 2; -fx-border-insets: 2; -fx-border-radius: 5; -fx-border-color: blue;" />
-            <TextArea fx:id="txtMostrarCantidad" layoutX="354.0" layoutY="7.0" prefHeight="200.0" prefWidth="91.0" style="-fx-background-color: white; -fx-border-style: solid inside; -fx-border-width: 2; -fx-border-insets: 2; -fx-border-radius: 5; -fx-border-color: blue;" />
-            <TextArea fx:id="txtMostrarPrecio" layoutX="451.0" layoutY="7.0" prefHeight="200.0" prefWidth="149.0" style="-fx-background-color: white; -fx-border-style: solid inside; -fx-border-width: 2; -fx-background-insets: 2; -fx-border-radius: 5; -fx-border-color: blue;" />
+            <TextArea fx:id="txtMostrarPedido" editable="false" layoutX="6.0" layoutY="7.0" prefHeight="200.0" prefWidth="341.0" style="-fx-background-color: white; -fx-border-style: solid inside; -fx-border-width: 2; -fx-border-insets: 2; -fx-border-radius: 5; -fx-border-color: blue;" />
+            <TextArea fx:id="txtMostrarCantidad" editable="false" layoutX="354.0" layoutY="7.0" prefHeight="200.0" prefWidth="91.0" style="-fx-background-color: white; -fx-border-style: solid inside; -fx-border-width: 2; -fx-border-insets: 2; -fx-border-radius: 5; -fx-border-color: blue;" />
+            <TextArea fx:id="txtMostrarPrecio" editable="false" layoutX="451.0" layoutY="7.0" prefHeight="200.0" prefWidth="149.0" style="-fx-background-color: white; -fx-border-style: solid inside; -fx-border-width: 2; -fx-background-insets: 2; -fx-border-radius: 5; -fx-border-color: blue;" />
          </children>
       </Pane>
       <Pane layoutX="210.0" layoutY="487.0" prefHeight="44.0" prefWidth="607.0" style="-fx-background-color: #ff0000; -fx-background-radius: 5;">

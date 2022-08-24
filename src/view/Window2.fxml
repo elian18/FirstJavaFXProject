@@ -186,7 +186,7 @@
          </font>
       </Label>
       <Accordion />
-      <TextArea fx:id="txtPedido" editable="false" layoutX="679.0" layoutY="182.0" prefHeight="402.0" prefWidth="191.0" style="-fx-border-color: #000000;" />
+      <TextArea fx:id="txtPedido" editable="false" layoutX="679.0" layoutY="182.0" prefHeight="402.0" prefWidth="191.0" style="-fx-border-color: #000000;" wrapText="true" />
       <Label fx:id="lblTotal" layoutX="849.0" layoutY="591.0" prefHeight="37.0" prefWidth="166.0" style="-fx-border-color: #000000; -fx-background-color: #ffff;" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="29.0" />
@@ -196,8 +196,8 @@
             <Font name="Monospaced Bold" size="20.0" />
          </font>
       </Button>
-      <TextArea fx:id="txtCant" editable="false" layoutX="874.0" layoutY="182.0" prefHeight="402.0" prefWidth="54.0" style="-fx-border-color: #000000;" />
-      <TextArea fx:id="txtPrice" editable="false" layoutX="932.0" layoutY="182.0" prefHeight="402.0" prefWidth="85.0" style="-fx-border-color: #000000;" />
+      <TextArea fx:id="txtCant" editable="false" layoutX="874.0" layoutY="182.0" prefHeight="402.0" prefWidth="54.0" style="-fx-border-color: #000000;" wrapText="true" />
+      <TextArea fx:id="txtPrice" editable="false" layoutX="932.0" layoutY="182.0" prefHeight="402.0" prefWidth="85.0" style="-fx-border-color: #000000;" wrapText="true" />
       <Label layoutX="737.0" layoutY="156.0" prefHeight="21.0" prefWidth="76.0" text="PRODUCTO">
          <font>
             <Font size="14.0" />

@@ -40,19 +40,25 @@ public class LastSceneController {
 
 
 
+
     @FXML
     void showVentana2(ActionEvent event) {
         controllerWindow2.show();
-        stage.close();
+        this.stage.close();
     }
 
-    public void displayDatos(String nombre, String ci, String direccion, String phone, Stage stage, MainSceneController mainSceneController) {
+    public void init(String nombre, Stage stage, MainSceneController mainSceneController) {
         lblNombre.setText(nombre);
+        this.controllerWindow2 = mainSceneController;
+        this.stage = stage;
+    }
+
+
+    public void displayDatos(String ci, String direccion, String phone) {
         lblCI.setText(ci);
         lblDireccion.setText(direccion);
         lblPhone.setText(phone);
-        this.controllerWindow2 = mainSceneController;
-        this.stage = stage;
+
     }
 
     public void displayPedido(String cantidad, String pedido, String precio, String total){
@@ -61,6 +67,7 @@ public class LastSceneController {
         txtMostrarPrecio.setText(precio);
         txtMostrarTotal.setText(total);
     }
+
 
 }
 

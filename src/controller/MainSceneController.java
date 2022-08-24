@@ -121,6 +121,7 @@ private TextArea txtCant;
 @FXML
 private TextArea txtPrice;
 
+
 @FXML
 void showWindow1(ActionEvent event) {
         controllerWindow1.show();
@@ -137,7 +138,8 @@ void showWindow3(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Window3.fxml"));
         Parent root = loader.load();
         LastSceneController controller = loader.getController();
-        controller.displayDatos(nombre, ci, direccion, phone, stage, this);
+        controller.init(nombre, stage, this);
+        controller.displayDatos(ci, direccion, phone);
         String cantidad = txtCant.getText();
         String pedido = txtPedido.getText();
         String precio = txtPrice.getText();
@@ -186,47 +188,51 @@ public void showTime() {
 }
 
 public void show() {
-        stage.show();
+        this.stage.show();
 }
 
 
+/* (non-Javadoc)
+ * @see javafx.fxml.Initializable#initialize(java.net.URL, java.util.ResourceBundle)
+ */
 @Override
 public void initialize(URL arg0, ResourceBundle arg1) {
         showTime();
-
         
         SpinnerValueFactory<Integer> valueSimple = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 50);
         valueSimple.setValue(0);
         countHSimple.setValueFactory(valueSimple);
         countHSimple.valueProperty().addListener((obs, oldValue, newValue) -> {
         HS = 1*newValue;
-                txtPedido.appendText("");
-                txtCant.appendText("");
-                txtPrice.appendText("");
+        txtPedido.setText("");
+        txtCant.setText("");
+        txtPrice.setText("");
                 txtPedido.appendText("Hamburguesa simple\n" );
                 txtCant.appendText(Integer.toString(newValue)+"\n");
                 txtPrice.appendText("$"+HS+"\n");
-                txtPedido.appendText("\n");
-                txtCant.appendText("\n");
-                txtPrice.appendText("\n");
-
+                txtPedido.isWrapText();
+                txtCant.isWrapText();
+                txtPrice.isWrapText();
         });
+        
         
         SpinnerValueFactory<Integer> valueBinaria = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 50);
         valueBinaria.setValue(0);
         countBBinaria.setValueFactory(valueBinaria);
         countBBinaria.valueProperty().addListener((obs, oldValue, newValue) ->  {
         BB = 1.75*newValue;
-                txtPedido.appendText("");
-                txtCant.appendText("");
-                txtPrice.appendText("");
+        
+        txtPedido.setText("");
+        txtCant.setText("");
+        txtPrice.setText("");
                 txtPedido.appendText("Burguer Binaria\n" );
                 txtCant.appendText(Integer.toString(newValue)+"\n");
-                txtPrice.appendText("$"+BB+"\n");    
-                txtPedido.appendText("\n");
-                txtCant.appendText("\n");
-                txtPrice.appendText("\n");  
-        }); 
+                txtPrice.appendText("$"+BB+"\n");
+                txtPedido.isWrapText();
+                txtCant.isWrapText();
+                txtPrice.isWrapText();    
+        });
+
 
         SpinnerValueFactory<Integer> valueCC = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 50);
         valueCC.setValue(0);

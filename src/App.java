@@ -9,6 +9,7 @@ import javafx.stage.Stage;
 public class App extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
+
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Window1.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
@@ -16,6 +17,8 @@ public class App extends Application {
         HomeScreenController controller = loader.getController();
         controller.setStage(primaryStage);
         primaryStage.show();
+
+        
     }
 
     public static void main(String[] args) {

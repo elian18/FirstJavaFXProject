@@ -1,16 +1,18 @@
 package controller;
 
 import java.io.IOException;
-import javax.swing.JOptionPane;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class HomeScreenController {
 
@@ -63,7 +65,12 @@ public class HomeScreenController {
                 this.stage.close();
                 }
             }else{
-                JOptionPane.showMessageDialog(null, "Usuario y/o contraseña incorrecta");
+                Alert dialogoAlerta = new Alert(AlertType.INFORMATION);
+                dialogoAlerta.setTitle("AVISO");
+                dialogoAlerta.setHeaderText(null);
+                dialogoAlerta.setContentText("Usuario y/o contraseña incorrecta");
+                dialogoAlerta.initStyle(StageStyle.UTILITY);
+                dialogoAlerta.showAndWait();
             }
             
         }
