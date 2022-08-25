@@ -218,5 +218,6 @@
             <Font name="Franklin Gothic Medium" size="20.0" />
          </font>
       </Label>
+      <Accordion />
    </children>
 </AnchorPane>

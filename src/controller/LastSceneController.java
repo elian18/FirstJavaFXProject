@@ -1,15 +1,20 @@
 package controller;
 
+import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 
 public class LastSceneController {
 
-    private MainSceneController controllerWindow2;
-    private Stage stage;
+    // private MainSceneController controllerWindow2;
+    // private Stage stage;
 
     @FXML
     private Label lblCI;
@@ -39,26 +44,22 @@ public class LastSceneController {
     private Label txtMostrarTotal;
 
 
-
-
     @FXML
-    void showVentana2(ActionEvent event) {
-        controllerWindow2.show();
-        this.stage.close();
+    void showVentana2(ActionEvent event) throws IOException {
+        Parent viewParent = FXMLLoader.load(getClass().getResource("/view/Window2.fxml"));
+                Scene viewScene = new Scene(viewParent);
+
+                Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+
+                window.setScene(viewScene);
+                window.show();
     }
 
-    public void init(String nombre, Stage stage, MainSceneController mainSceneController) {
+    public void displayDatos(String nombre, String ci, String direccion, String phone) {
         lblNombre.setText(nombre);
-        this.controllerWindow2 = mainSceneController;
-        this.stage = stage;
-    }
-
-
-    public void displayDatos(String ci, String direccion, String phone) {
         lblCI.setText(ci);
         lblDireccion.setText(direccion);
         lblPhone.setText(phone);
-
     }
 
     public void displayPedido(String cantidad, String pedido, String precio, String total){

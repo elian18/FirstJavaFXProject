@@ -1,9 +1,12 @@
 package controller;
 
 import java.io.IOException;
+// import java.time.LocalDate;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+// import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -54,6 +57,10 @@ public class HomeScreenController {
         (txtUser.getText().equals("SebasRo17")&&txtPasword.getText().equals("sebas")) || 
         (txtUser.getText().equals("JoRoX")&&txtPasword.getText().equals("epngood"))){
             {//comparar inicio de sesion
+
+                // String fecha = String.format("%s", LocalDate.now());
+                // String usuario = txtUser.getText();
+
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Window2.fxml"));
                 Parent root = loader.load();
                 MainSceneController controller = loader.getController();
@@ -63,6 +70,20 @@ public class HomeScreenController {
                 controller.init(txtUser.getText(), stage, this);
                 stage.show();
                 this.stage.close();
+
+
+                // FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Window1.fxml"));
+                // Parent viewParent = loader.load();
+
+                // MainSceneController mainSceneController = loader.getController();
+                // mainSceneController.displayInicio(fecha, usuario);
+
+                // Scene viewScene = new Scene(viewParent);
+
+                // Stage window = (Stage) (((Node) event.getSource()).getScene().getWindow());
+                // window.setScene(viewScene);
+                // window.show();
+
                 }
             }else{
                 Alert dialogoAlerta = new Alert(AlertType.INFORMATION);
@@ -75,14 +96,9 @@ public class HomeScreenController {
             
         }
 
-    public void setStage(Stage primaryStage) {
-        stage = primaryStage;   // Guardar ventana para que el controllador no elimine la ventana
-    }
-
-    public void show() {
-        stage.show();
-    }
-
+        public void setStage(Stage primaryStage) {
+            stage = primaryStage;   // Guardar ventana para que el controllador no elimine la ventana
+        }
 }
 
 

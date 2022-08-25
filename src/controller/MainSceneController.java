@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+// import java.time.LocalDate;
 import java.util.Date;
 import java.util.ResourceBundle;
 import javafx.application.Platform;
@@ -11,6 +12,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -22,9 +24,9 @@ import javafx.stage.Stage;
 
 public class MainSceneController implements Initializable {
 
-private HomeScreenController controllerWindow1;
+// private HomeScreenController homeScreenController;
 private Stage stage; //stage: ventana la que se visualiza
-MainSceneController mainSceneController;
+// MainSceneController mainSceneController;
 private volatile boolean stop = false;
 
 private double HS;
@@ -120,37 +122,67 @@ private TextArea txtCant;
 
 @FXML
 private TextArea txtPrice;
+// private HomeScreenController homeScreenController;
+// private HomeScreenController controllerWindow1;
 
 
+/**
+ * @param event
+ * @throws IOException
+ */
 @FXML
-void showWindow1(ActionEvent event) {
-        controllerWindow1.show();
-        stage.close();
+void showWindow1(ActionEvent event) throws IOException {
+                Parent viewParent = FXMLLoader.load(getClass().getResource("/view/Window1.fxml"));
+                Scene viewScene = new Scene(viewParent);
+
+                Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+
+                window.setScene(viewScene);
+                window.show();
 }
 
 @FXML
 void showWindow3(ActionEvent event) throws IOException {
         stop = true;
+
         String nombre = txtName.getText();
         String ci = txtCI.getText();
         String direccion = txtAdress.getText();
         String phone = txtPhone.getText();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Window3.fxml"));
-        Parent root = loader.load();
-        LastSceneController controller = loader.getController();
-        controller.init(nombre, stage, this);
-        controller.displayDatos(ci, direccion, phone);
+
         String cantidad = txtCant.getText();
         String pedido = txtPedido.getText();
         String precio = txtPrice.getText();
         String total = lblTotal.getText();
 
-        controller.displayPedido(cantidad, pedido, precio, total);
-        Scene scene = new Scene(root);
-        Stage stage = new Stage(); // Crea la ventana
-        stage.setScene(scene);
-        stage.show();
-        this.stage.close();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Window3.fxml"));
+        Parent viewParent = loader.load();
+
+        LastSceneController lastSceneController = loader.getController();
+        lastSceneController.displayDatos(nombre, ci, direccion, phone);
+        lastSceneController.displayPedido(cantidad, pedido, precio, total);
+
+        Scene viewScene = new Scene(viewParent);
+        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        window.setScene(viewScene);
+        window.show();
+
+
+
+        // Parent root = loader.load();
+        // LastSceneController controller = loader.getController();
+        // controller.displayDatos(nombre, ci, direccion, phone);
+        // String cantidad = txtCant.getText();
+        // String pedido = txtPedido.getText();
+        // String precio = txtPrice.getText();
+        // String total = lblTotal.getText();
+
+        // controller.displayPedido(cantidad, pedido, precio, total);
+        // Scene scene = new Scene(root);
+        // Stage stage = new Stage(); // Crea la ventana
+        // stage.setScene(scene);
+        // stage.show();
+        // this.stage.close();
 }
 
 
@@ -160,14 +192,21 @@ void sumarPedidos(ActionEvent event) {
         String total = suma.toString();
         lblTotal.setText(total);
 }
-
 public void init(String text, Stage stage, HomeScreenController homeScreenController) {
         lblName.setText(text);
         String fecha = String.format("%s", LocalDate.now());
         labelFecha.setText(fecha);
-        this.controllerWindow1 = homeScreenController;
+
         this.stage = stage;
         }
+
+// public void init(String text, Stage stage, HomeScreenController homeScreenController) {
+//         lblName.setText(text);
+//         String fecha = String.format("%s", LocalDate.now());
+//         labelFecha.setText(fecha);
+//         // this.controllerWindow1 = homeScreenController;
+//         // this.stage = stage;
+// }
 
 public void showTime() {
         Thread thread = new Thread(() ->{
@@ -411,4 +450,8 @@ public void initialize(URL arg0, ResourceBundle arg1) {
                 txtCant.appendText(Integer.toString(newValue)+"\n");
                 txtPrice.appendText("$"+SP+"\n");
         }); 
-}}
+}
+
+
+
+}
