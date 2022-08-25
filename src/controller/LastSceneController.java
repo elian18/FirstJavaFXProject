@@ -104,7 +104,6 @@ public class LastSceneController {
         String ci = lblCI.getText();
         String direccion = lblDireccion.getText();
         String phone = lblPhone.getText();
-
         String cantidad = txtMostrarCantidad.getText();
         String pedido = txtMostrarPedido.getText();
         String precio = txtMostrarPrecio.getText();

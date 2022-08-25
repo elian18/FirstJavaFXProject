@@ -127,9 +127,7 @@ private TextArea txtPrice;
 void showWindow1(ActionEvent event) throws IOException {
                 Parent viewParent = FXMLLoader.load(getClass().getResource("/view/Window1.fxml"));
                 Scene viewScene = new Scene(viewParent);
-
                 Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
-
                 window.setScene(viewScene);
                 window.show();
 }
@@ -137,14 +135,11 @@ void showWindow1(ActionEvent event) throws IOException {
 @FXML
 void showWindow3(ActionEvent event) throws IOException {
         stop = true;
-
         String usuario = lblName.getText();
-
         String nombre = txtName.getText();
         String ci = txtCI.getText();
         String direccion = txtAdress.getText();
         String phone = txtPhone.getText();
-
         String cantidad = txtCant.getText();
         String pedido = txtPedido.getText();
         String precio = txtPrice.getText();
@@ -152,11 +147,9 @@ void showWindow3(ActionEvent event) throws IOException {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Window3.fxml"));
         Parent viewParent = loader.load();
-
         LastSceneController lastSceneController = loader.getController();
         lastSceneController.displayDatos(usuario, nombre, ci, direccion, phone);
         lastSceneController.displayPedido(cantidad, pedido, precio, total);
-
         Scene viewScene = new Scene(viewParent);
         Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
         window.setScene(viewScene);
