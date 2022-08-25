@@ -40,17 +40,41 @@ public class LastSceneController {
     @FXML
     private Label txtMostrarTotal;
 
+    @FXML
+    void showEditVentana2(ActionEvent event) throws IOException {
+
+        String nombre = lblNombre.getText();
+        String ci = lblCI.getText();
+        String direccion = lblDireccion.getText();
+        String phone = lblPhone.getText();
+
+        String cantidad = txtMostrarCantidad.getText();
+        String pedido = txtMostrarPedido.getText();
+        String precio = txtMostrarPrecio.getText();
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Window2.fxml"));
+        Parent viewParent = loader.load();
+        MainSceneController mainSceneController = loader.getController();
+        mainSceneController.displayDatos(nombre, ci, direccion, phone);
+        mainSceneController.displayPedido(cantidad, pedido, precio);
+        Scene viewScene = new Scene(viewParent);
+        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        window.setScene(viewScene);
+        window.show();
+    }
+
 
     @FXML
     void showVentana2(ActionEvent event) throws IOException {
-        Parent viewParent = FXMLLoader.load(getClass().getResource("/view/Window2.fxml"));
-                Scene viewScene = new Scene(viewParent);
-
-                Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
-
-                window.setScene(viewScene);
-                window.show();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Window2.fxml"));
+        Parent viewParent = loader.load();
+        Scene viewScene = new Scene(viewParent);
+        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        window.setScene(viewScene);
+        window.show();
     }
+
+
 
     public void displayDatos(String nombre, String ci, String direccion, String phone) {
         lblNombre.setText(nombre);

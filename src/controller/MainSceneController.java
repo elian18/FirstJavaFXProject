@@ -22,7 +22,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class MainSceneController implements Initializable {
-private Stage stage; //stage: ventana la que se visualiza
+// private Stage stage; //stage: ventana la que se visualiza
 private volatile boolean stop = false;
 
 private double HS;
@@ -172,7 +172,7 @@ public void init(String text, Stage stage, HomeScreenController homeScreenContro
         lblName.setText(text);
         String fecha = String.format("%s", LocalDate.now());
         labelFecha.setText(fecha);
-        this.stage = stage;
+        // this.stage = stage;
         }
 
 public void showTime() {
@@ -193,9 +193,6 @@ public void showTime() {
         thread.start();
 }
 
-public void show() {
-        this.stage.show();
-}
 
 @Override
 public void initialize(URL arg0, ResourceBundle arg1) {
@@ -413,6 +410,19 @@ public void initialize(URL arg0, ResourceBundle arg1) {
                 txtCant.appendText(Integer.toString(newValue)+"\n");
                 txtPrice.appendText("$"+SP+"\n");
         }); 
+}
+
+public void displayDatos(String nombre, String ci, String direccion, String phone) {
+        txtName.setText(nombre);
+        txtCI.setText(ci);
+        txtAdress.setText(direccion);
+        txtPhone.setText(phone);
+}
+
+public void displayPedido(String cantidad, String pedido, String precio) {
+        txtCant.setText(cantidad);
+        txtPedido.setText(pedido);
+        txtPrice.setText(precio);
 }
 
 

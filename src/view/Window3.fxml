@@ -38,7 +38,7 @@
                   <Font name="Leelawadee UI Bold" size="16.0" />
                </font>
             </Button>
-            <Button layoutX="489.0" layoutY="222.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="91.0" style="-fx-background-color: #27c654;" text="Editar" textAlignment="CENTER">
+            <Button layoutX="489.0" layoutY="222.0" mnemonicParsing="false" onAction="#showEditVentana2" prefHeight="44.0" prefWidth="91.0" style="-fx-background-color: #27c654;" text="Editar" textAlignment="CENTER">
                <font>
                   <Font name="Leelawadee UI Bold" size="16.0" />
                </font>
