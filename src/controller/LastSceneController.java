@@ -99,6 +99,7 @@ public class LastSceneController {
 
     @FXML
     void generarPedido(ActionEvent event) throws FileNotFoundException, DocumentException {
+        int numero = (int) (Math.random()*100+1);
         String nombre = lblNombre.getText();
         String ci = lblCI.getText();
         String direccion = lblDireccion.getText();
@@ -110,7 +111,7 @@ public class LastSceneController {
         String total = txtMostrarTotal.getText();
 
         Document documento = new Document();
-        String destino = "pedido.pdf";
+        String destino = ci+"-"+numero+".pdf";
         FileOutputStream ficheroPDF = new FileOutputStream(destino);
         PdfWriter.getInstance(documento, ficheroPDF);
         documento.open();
@@ -146,11 +147,11 @@ public class LastSceneController {
 
         tabla.addCell(pedido);
         tabla.addCell(cantidad);
-        tabla.addCell("$ "+ precio);
+        tabla.addCell(precio);
 
         documento.add(tabla);
 
-        Paragraph fin = new Paragraph("\n                                                                                    TOTAL: "+"$ "+total+"\n",
+        Paragraph fin = new Paragraph("\n\n                                                                                   TOTAL: "+"$ "+total+"\n",
                                         FontFactory.getFont("arial",
                                         14,
                                         Font.NORMAL,
