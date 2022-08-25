@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-// import java.time.LocalDate;
 import java.util.Date;
 import java.util.ResourceBundle;
 import javafx.application.Platform;
@@ -23,10 +22,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class MainSceneController implements Initializable {
-
-// private HomeScreenController homeScreenController;
 private Stage stage; //stage: ventana la que se visualiza
-// MainSceneController mainSceneController;
 private volatile boolean stop = false;
 
 private double HS;
@@ -122,9 +118,6 @@ private TextArea txtCant;
 
 @FXML
 private TextArea txtPrice;
-// private HomeScreenController homeScreenController;
-// private HomeScreenController controllerWindow1;
-
 
 /**
  * @param event
@@ -166,23 +159,6 @@ void showWindow3(ActionEvent event) throws IOException {
         Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
         window.setScene(viewScene);
         window.show();
-
-
-
-        // Parent root = loader.load();
-        // LastSceneController controller = loader.getController();
-        // controller.displayDatos(nombre, ci, direccion, phone);
-        // String cantidad = txtCant.getText();
-        // String pedido = txtPedido.getText();
-        // String precio = txtPrice.getText();
-        // String total = lblTotal.getText();
-
-        // controller.displayPedido(cantidad, pedido, precio, total);
-        // Scene scene = new Scene(root);
-        // Stage stage = new Stage(); // Crea la ventana
-        // stage.setScene(scene);
-        // stage.show();
-        // this.stage.close();
 }
 
 
@@ -196,17 +172,8 @@ public void init(String text, Stage stage, HomeScreenController homeScreenContro
         lblName.setText(text);
         String fecha = String.format("%s", LocalDate.now());
         labelFecha.setText(fecha);
-
         this.stage = stage;
         }
-
-// public void init(String text, Stage stage, HomeScreenController homeScreenController) {
-//         lblName.setText(text);
-//         String fecha = String.format("%s", LocalDate.now());
-//         labelFecha.setText(fecha);
-//         // this.controllerWindow1 = homeScreenController;
-//         // this.stage = stage;
-// }
 
 public void showTime() {
         Thread thread = new Thread(() ->{
@@ -230,10 +197,6 @@ public void show() {
         this.stage.show();
 }
 
-
-/* (non-Javadoc)
- * @see javafx.fxml.Initializable#initialize(java.net.URL, java.util.ResourceBundle)
- */
 @Override
 public void initialize(URL arg0, ResourceBundle arg1) {
         showTime();

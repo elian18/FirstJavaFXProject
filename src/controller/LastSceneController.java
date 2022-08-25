@@ -13,9 +13,6 @@ import javafx.stage.Stage;
 
 public class LastSceneController {
 
-    // private MainSceneController controllerWindow2;
-    // private Stage stage;
-
     @FXML
     private Label lblCI;
 
