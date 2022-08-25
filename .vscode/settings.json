@@ -8,7 +8,8 @@
         "c:\\Java\\javafx-sdk-18.0.1\\lib\\javafx.media.jar",
         "c:\\Java\\javafx-sdk-18.0.1\\lib\\javafx.swing.jar",
         "c:\\Java\\javafx-sdk-18.0.1\\lib\\javafx.web.jar",
-        "c:\\Java\\javafx-sdk-18.0.1\\lib\\javafx-swt.jar"
+        "c:\\Java\\javafx-sdk-18.0.1\\lib\\javafx-swt.jar",
+        "c:\\Users\\elian\\Downloads\\itextpdf-5.4.0.jar"
     ],
     "java.project.sourcePaths": [
         "src"

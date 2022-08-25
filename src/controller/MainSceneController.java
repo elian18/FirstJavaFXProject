@@ -22,7 +22,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class MainSceneController implements Initializable {
-// private Stage stage; //stage: ventana la que se visualiza
+        String fecha = String.format("%s", LocalDate.now());
 private volatile boolean stop = false;
 
 private double HS;
@@ -138,6 +138,8 @@ void showWindow1(ActionEvent event) throws IOException {
 void showWindow3(ActionEvent event) throws IOException {
         stop = true;
 
+        String usuario = lblName.getText();
+
         String nombre = txtName.getText();
         String ci = txtCI.getText();
         String direccion = txtAdress.getText();
@@ -152,7 +154,7 @@ void showWindow3(ActionEvent event) throws IOException {
         Parent viewParent = loader.load();
 
         LastSceneController lastSceneController = loader.getController();
-        lastSceneController.displayDatos(nombre, ci, direccion, phone);
+        lastSceneController.displayDatos(usuario, nombre, ci, direccion, phone);
         lastSceneController.displayPedido(cantidad, pedido, precio, total);
 
         Scene viewScene = new Scene(viewParent);
@@ -168,12 +170,11 @@ void sumarPedidos(ActionEvent event) {
         String total = suma.toString();
         lblTotal.setText(total);
 }
-public void init(String text, Stage stage, HomeScreenController homeScreenController) {
-        lblName.setText(text);
-        String fecha = String.format("%s", LocalDate.now());
+public void init(String usuario, Stage stage, HomeScreenController homeScreenController) {
+        lblName.setText(usuario);
         labelFecha.setText(fecha);
-        // this.stage = stage;
-        }
+
+}
 
 public void showTime() {
         Thread thread = new Thread(() ->{
@@ -412,19 +413,26 @@ public void initialize(URL arg0, ResourceBundle arg1) {
         }); 
 }
 
-public void displayDatos(String nombre, String ci, String direccion, String phone) {
+public void displayDatos(String usuario, String nombre, String ci, String direccion, String phone, String fecha) {
+        lblName.setText(usuario);
         txtName.setText(nombre);
         txtCI.setText(ci);
         txtAdress.setText(direccion);
         txtPhone.setText(phone);
+        labelFecha.setText(fecha);
+
 }
 
-public void displayPedido(String cantidad, String pedido, String precio) {
+public void displayPedido(String cantidad, String pedido, String precio, String total) {
         txtCant.setText(cantidad);
         txtPedido.setText(pedido);
         txtPrice.setText(precio);
+        lblTotal.setText(total);
 }
 
-
+public void display(String usuario, String fecha) {
+        lblName.setText(usuario);
+        labelFecha.setText(fecha);
+}
 
 }

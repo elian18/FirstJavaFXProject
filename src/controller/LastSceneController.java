@@ -3,6 +3,8 @@ package controller;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.time.LocalDate;
+
 import com.itextpdf.text.BaseColor;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
@@ -23,6 +25,8 @@ import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 
 public class LastSceneController {
+    @FXML
+    private Label lblUser;
 
     @FXML
     private Label lblCI;
@@ -53,7 +57,7 @@ public class LastSceneController {
 
     @FXML
     void showEditVentana2(ActionEvent event) throws IOException {
-
+        String usuario = lblUser.getText();
         String nombre = lblNombre.getText();
         String ci = lblCI.getText();
         String direccion = lblDireccion.getText();
@@ -62,12 +66,15 @@ public class LastSceneController {
         String cantidad = txtMostrarCantidad.getText();
         String pedido = txtMostrarPedido.getText();
         String precio = txtMostrarPrecio.getText();
+        String total = txtMostrarTotal.getText();
+
+        String fecha = String.format("%s", LocalDate.now());
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Window2.fxml"));
         Parent viewParent = loader.load();
         MainSceneController mainSceneController = loader.getController();
-        mainSceneController.displayDatos(nombre, ci, direccion, phone);
-        mainSceneController.displayPedido(cantidad, pedido, precio);
+        mainSceneController.displayDatos(usuario, nombre, ci, direccion, phone, fecha);
+        mainSceneController.displayPedido(cantidad, pedido, precio, total);
         Scene viewScene = new Scene(viewParent);
         Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
         window.setScene(viewScene);
@@ -77,9 +84,12 @@ public class LastSceneController {
 
     @FXML
     void showVentana2(ActionEvent event) throws IOException {
-        
+        String fecha = String.format("%s", LocalDate.now());
+        String usuario = lblUser.getText();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Window2.fxml"));
         Parent viewParent = loader.load();
+        MainSceneController mainSceneController = loader.getController();
+        mainSceneController.display(usuario, fecha);
         Scene viewScene = new Scene(viewParent);
         Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
         window.setScene(viewScene);
@@ -152,7 +162,8 @@ public class LastSceneController {
 
     }
 
-    public void displayDatos(String nombre, String ci, String direccion, String phone) {
+    public void displayDatos(String usuario, String nombre, String ci, String direccion, String phone) {
+        lblUser.setText(usuario);
         lblNombre.setText(nombre);
         lblCI.setText(ci);
         lblDireccion.setText(direccion);

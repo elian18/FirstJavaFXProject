@@ -54,14 +54,14 @@ public class HomeScreenController {
         (txtUser.getText().equals("SebasRo17")&&txtPasword.getText().equals("sebas")) || 
         (txtUser.getText().equals("JoRoX")&&txtPasword.getText().equals("epngood"))){
             {//comparar inicio de sesion
-
+                String usuario = txtUser.getText();
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Window2.fxml"));
                 Parent root = loader.load();
                 MainSceneController controller = loader.getController();
                 Scene scene = new Scene(root);
                 Stage stage = new Stage(); // Crea la ventana
                 stage.setScene(scene);
-                controller.init(txtUser.getText(), stage, this);
+                controller.init(usuario, stage, this);
                 stage.show();
                 this.stage.close();
 
