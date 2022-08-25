@@ -164,6 +164,21 @@
                   <Spinner fx:id="countMPapas" editable="true" layoutX="415.0" layoutY="400.0" prefHeight="25.0" prefWidth="57.0" />
                   <Spinner fx:id="countD" editable="true" layoutX="582.0" layoutY="506.0" prefHeight="25.0" prefWidth="57.0" />
                   <Spinner fx:id="countSPapa" editable="true" layoutX="415.0" layoutY="506.0" prefHeight="25.0" prefWidth="57.0" />
+                  <Label layoutX="180.0" layoutY="89.0" text="\$1.00" />
+                  <Label layoutX="596.0" layoutY="224.0" text="\$1.50" />
+                  <Label layoutX="596.0" layoutY="91.0" text="\$1.50" />
+                  <Label layoutX="429.0" layoutY="224.0" text="\$1.50" />
+                  <Label layoutX="429.0" layoutY="91.0" text="\$1.25" />
+                  <Label layoutX="180.0" layoutY="224.0" text="\$2.25" />
+                  <Label layoutX="596.0" layoutY="339.0" text="\$1.50" />
+                  <Label layoutX="429.0" layoutY="339.0" text="\$2.00" />
+                  <Label layoutX="180.0" layoutY="339.0" text="\$1.75" />
+                  <Label layoutX="429.0" layoutY="547.0" text="\$1.00" />
+                  <Label layoutX="180.0" layoutY="547.0" text="\$2.50" />
+                  <Label layoutX="596.0" layoutY="440.0" text="\$1.00" />
+                  <Label layoutX="429.0" layoutY="440.0" text="\$1.50" />
+                  <Label layoutX="180.0" layoutY="440.0" text="\$2.50" />
+                  <Label layoutX="596.0" layoutY="547.0" text="\$1.75" />
                </children>
             </Pane>
          </content>
