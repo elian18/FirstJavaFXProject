@@ -77,7 +77,7 @@ public class HomeScreenController {
             
         }
 
-        public void setStage(Stage primaryStage) {
+        public void setStage(Stage primaryStage) {  
             stage = primaryStage;   // Guardar ventana para que el controllador no elimine la ventana
         }
 }
