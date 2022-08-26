@@ -355,7 +355,7 @@ public void initialize(URL arg0, ResourceBundle arg1) {
         countSPapa.setValueFactory(valueSPapa);
 }
 /**
- * Metodo que indica los datos del cliente
+ * Metodo que indica los datos del cliente regresados de la ventana 3
  * @param usuario
  * @param nombre
  * @param ci
@@ -374,7 +374,7 @@ public void displayDatos(String usuario, String nombre, String ci, String direcc
 }
 
 /**
- * Metodo que regresa el usuario y la fecha a las pantallas
+ * Metodo que regresa el usuario y la fecha a la pantalla 3
  * @param usuario
  * @param fecha
  */

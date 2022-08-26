@@ -44,9 +44,6 @@ public class LastSceneController {
     private TextArea txtMostrarCantidad;
 
     @FXML
-    private Label txtMostrarIVA;
-
-    @FXML
     private TextArea txtMostrarPedido;
 
     @FXML
