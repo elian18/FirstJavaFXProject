@@ -308,7 +308,6 @@ void sumarPedidos(ActionEvent event) {
 public void init(String usuario, Stage stage, HomeScreenController homeScreenController) {
         lblName.setText(usuario);
         labelFecha.setText(fecha);
-
 }
 /**
  * Metodo que indica la hora en tiempo real
