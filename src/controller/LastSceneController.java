@@ -55,6 +55,12 @@ public class LastSceneController {
     @FXML
     private Label txtMostrarTotal;
 
+
+/**
+ * Regresa a la ventana 2 con los datos del cliente para cambiar la orden
+ * @param event
+ * @throws IOException
+ */
     @FXML
     void showEditVentana2(ActionEvent event) throws IOException {
         String usuario = lblUser.getText();
@@ -74,7 +80,11 @@ public class LastSceneController {
         window.show();
     }
 
-
+/**
+ * Regresa a la ventana 2 sin ningun dato
+ * @param event
+ * @throws IOException
+ */
     @FXML
     void showVentana2(ActionEvent event) throws IOException {
         String fecha = String.format("%s", LocalDate.now());
@@ -89,7 +99,12 @@ public class LastSceneController {
         window.show();
     }
 
-
+/**
+ * boton que guarda los datos del cliente y el pedido en un pdf
+ * @param event
+ * @throws FileNotFoundException
+ * @throws DocumentException
+ */
     @FXML
     void generarPedido(ActionEvent event) throws FileNotFoundException, DocumentException {
         int numero = (int) (Math.random()*100+1);
@@ -155,6 +170,15 @@ public class LastSceneController {
 
     }
 
+/**
+ * Metodo que indica los datos del cliente
+ * @param usuario
+ * @param nombre
+ * @param ci
+ * @param direccion
+ * @param phone
+ * @param fecha
+ */
     public void displayDatos(String usuario, String nombre, String ci, String direccion, String phone) {
         lblUser.setText(usuario);
         lblNombre.setText(nombre);
@@ -163,6 +187,11 @@ public class LastSceneController {
         lblPhone.setText(phone);
     }
 
+/**
+ * Metodo que regresa el usuario y la fecha a las pantallas
+ * @param usuario
+ * @param fecha
+ */
     public void displayPedido(String cantidad, String pedido, String precio, String total){
         txtMostrarCantidad.setText(cantidad);
         txtMostrarPedido.setText(pedido);

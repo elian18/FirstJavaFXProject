@@ -122,6 +122,7 @@ private TextArea txtCant;
 private TextArea txtPrice;
 
 /**
+ * Metodo para regresar a la ventana 1
  * @param event
  * @throws IOException
  */
@@ -133,7 +134,11 @@ void showWindow1(ActionEvent event) throws IOException {
                 window.setScene(viewScene);
                 window.show();
 }
-
+/**
+ * Metodo para avanzar a la pantalla 3
+ * @param event
+ * @throws IOException
+ */
 @FXML
 void showWindow3(ActionEvent event) throws IOException {
         stop = true;
@@ -158,6 +163,10 @@ void showWindow3(ActionEvent event) throws IOException {
         window.show();
 }
 
+/**
+ * Botones para tomar el pedido
+ * @param event
+ */
 
 @FXML
 void btnHSimple(MouseEvent event) {
@@ -286,6 +295,10 @@ void btnSprite(MouseEvent event) {
         txtPrice.appendText("$"+S+"\n");
 }
 
+/**
+ * Metodo que suma los precios de los productos
+ * @param event
+ */
 @FXML
 void sumarPedidos(ActionEvent event) {
         Double suma = HS+BB+CC+BD+F+HD+JB+MP+P+PB+PG+PM+PP+S+SP;
@@ -297,6 +310,9 @@ public void init(String usuario, Stage stage, HomeScreenController homeScreenCon
         labelFecha.setText(fecha);
 
 }
+/**
+ * Metodo que indica la hora en tiempo real
+ */
 
 public void showTime() {
         Thread thread = new Thread(() ->{
@@ -316,7 +332,9 @@ public void showTime() {
         thread.start();
 }
 
-
+/**
+ * Interface que inicializa la hora y los spinners
+ */
 @Override
 public void initialize(URL arg0, ResourceBundle arg1) {
         showTime();
@@ -337,7 +355,15 @@ public void initialize(URL arg0, ResourceBundle arg1) {
         countS.setValueFactory(valueS);
         countSPapa.setValueFactory(valueSPapa);
 }
-
+/**
+ * Metodo que indica los datos del cliente
+ * @param usuario
+ * @param nombre
+ * @param ci
+ * @param direccion
+ * @param phone
+ * @param fecha
+ */
 public void displayDatos(String usuario, String nombre, String ci, String direccion, String phone, String fecha) {
         lblName.setText(usuario);
         txtName.setText(nombre);
@@ -348,6 +374,11 @@ public void displayDatos(String usuario, String nombre, String ci, String direcc
 
 }
 
+/**
+ * Metodo que regresa el usuario y la fecha a las pantallas
+ * @param usuario
+ * @param fecha
+ */
 public void display(String usuario, String fecha) {
         lblName.setText(usuario);
         labelFecha.setText(fecha);

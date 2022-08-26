@@ -24,7 +24,9 @@ public class HomeScreenController {
     @FXML
     private PasswordField txtPassword;
 
-
+    /**
+    * Metodo para evitar espacios
+    */
     @FXML
     private void eventKey(KeyEvent event)
     {
@@ -45,8 +47,7 @@ public class HomeScreenController {
     }
 
     /**
-     * @param event
-     * @throws IOException
+     * Metodo para avanzar a la ventana 2
      */
     @FXML
     void showWindow2(ActionEvent event) throws IOException {
@@ -76,6 +77,11 @@ public class HomeScreenController {
             }
             
         }
+
+        /**
+         *  Metodo que inicia la primera ventana
+         * @param primaryStage
+         */
 
         public void setStage(Stage primaryStage) {  
             stage = primaryStage;   // Guardar ventana para que el controllador no elimine la ventana

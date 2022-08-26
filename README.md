@@ -41,4 +41,4 @@ A continuación se presenta ejemplo de código y diagrama de clases
 
 #### Diagrama de Clases
 
-![DiagramadeFlujo](src/view/images/DiagramadeFlujo.png)
+![DiagramadeClases](src/design/DiagramaDeClases.png)
