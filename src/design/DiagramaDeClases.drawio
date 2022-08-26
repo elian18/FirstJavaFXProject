@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="k-hk7OjZPeRuK6OuPr7A" name="Página-1">
-        <mxGraphModel dx="2058" dy="1471" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="938" dy="662" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -70,7 +70,7 @@
                         <mxPoint x="260" y="500" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="34" value="&lt;p style=&quot;margin: 4px 0px 0px; text-align: center; font-size: 18px;&quot;&gt;&lt;i style=&quot;font-size: 18px;&quot;&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br style=&quot;font-size: 18px;&quot;&gt;&lt;b style=&quot;font-size: 18px;&quot;&gt;Initialize&lt;/b&gt;&lt;/p&gt;&lt;hr style=&quot;font-size: 18px;&quot;&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px; font-size: 18px;&quot;&gt;+ field1: Type&lt;br style=&quot;font-size: 18px;&quot;&gt;+ field2: Type&lt;/p&gt;&lt;hr style=&quot;font-size: 18px;&quot;&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px; font-size: 18px;&quot;&gt;+ showTime(): void&lt;br style=&quot;font-size: 18px;&quot;&gt;+ setValueFactory(): spinner&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=18;fontFamily=Helvetica;html=1;labelBackgroundColor=none;fontColor=default;" parent="1" vertex="1">
+                <mxCell id="34" value="&lt;p style=&quot;margin: 4px 0px 0px ; text-align: center ; font-size: 18px&quot;&gt;&lt;i style=&quot;font-size: 18px&quot;&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br style=&quot;font-size: 18px&quot;&gt;&lt;b style=&quot;font-size: 18px&quot;&gt;Initializable&lt;/b&gt;&lt;/p&gt;&lt;hr style=&quot;font-size: 18px&quot;&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px ; font-size: 18px&quot;&gt;+ field1: Type&lt;br style=&quot;font-size: 18px&quot;&gt;+ field2: Type&lt;/p&gt;&lt;hr style=&quot;font-size: 18px&quot;&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px ; font-size: 18px&quot;&gt;+ showTime(): void&lt;br style=&quot;font-size: 18px&quot;&gt;+ setValueFactory(): spinner&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=18;fontFamily=Helvetica;html=1;labelBackgroundColor=none;fontColor=default;" parent="1" vertex="1">
                     <mxGeometry x="1280" y="750" width="310" height="190" as="geometry"/>
                 </mxCell>
                 <mxCell id="35" value="1" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;" vertex="1" parent="1">

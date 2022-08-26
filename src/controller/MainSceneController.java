@@ -23,7 +23,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 public class MainSceneController implements Initializable {
-        String fecha = String.format("%s", LocalDate.now());
+String fecha = String.format("%s", LocalDate.now());
 private volatile boolean stop = false;
 
 private double HS, BB, CC, BD, F, HD, JB, MP, P, PB, PG, PM, PP, S, SP;
