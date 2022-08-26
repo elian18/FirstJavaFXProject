@@ -19,73 +19,75 @@ import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 public class MainSceneController implements Initializable {
         String fecha = String.format("%s", LocalDate.now());
 private volatile boolean stop = false;
 
-private double HS;
-private double BB;
-private double CC;
-private double BD;
-private double F;
-private double HD;
-private double JB;
-private double MP;
-private double P;
-private double PB;
-private double PG;
-private double PM;
-private double PP;
-private double S;
-private double SP;
+private double HS, BB, CC, BD, F, HD, JB, MP, P, PB, PG, PM, PP, S, SP;
 
 @FXML
 private Spinner<Integer> countBBinaria;
+SpinnerValueFactory<Integer> valueBinaria = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 50);
 
 @FXML
 private Spinner<Integer> countCC;
+SpinnerValueFactory<Integer> valueCC = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 50);
 
 @FXML
 private Spinner<Integer> countD;
+SpinnerValueFactory<Integer> valueD = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 50);
 
 @FXML
 private Spinner<Integer> countF;
+SpinnerValueFactory<Integer> valueF = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 50);
 
 @FXML
 private Spinner<Integer> countHDoble;
+SpinnerValueFactory<Integer> valueHDoble = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 50);
 
 @FXML
 private Spinner<Integer> countHSimple;
+SpinnerValueFactory<Integer> valueSimple = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 50);
 
 @FXML
 private Spinner<Integer> countJBurguer;
+SpinnerValueFactory<Integer> valueJBurguer = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 50);
 
 @FXML
 private Spinner<Integer> countMPapas;
+SpinnerValueFactory<Integer> valueMPapas = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 50);
 
 @FXML
 private Spinner<Integer> countP;
+SpinnerValueFactory<Integer> valueP = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 50);
 
 @FXML
 private Spinner<Integer> countPBurguer;
+SpinnerValueFactory<Integer> valuePBurguer = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 50);
 
 @FXML
 private Spinner<Integer> countPGrandes;
+SpinnerValueFactory<Integer> valuePGrandes = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 50);
 
 @FXML
 private Spinner<Integer> countPMedianas;
+SpinnerValueFactory<Integer> valuePMedianas = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 50);
 
 @FXML
 private Spinner<Integer> countPPequenas;
+SpinnerValueFactory<Integer> valuePPequenas = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 50);
 
 @FXML
 private Spinner<Integer> countS;
+SpinnerValueFactory<Integer> valueS = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 50);
 
 @FXML
 private Spinner<Integer> countSPapa;
-        
+SpinnerValueFactory<Integer> valueSPapa = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 50);
+
 @FXML
 private Label labelFecha;
 
@@ -158,6 +160,134 @@ void showWindow3(ActionEvent event) throws IOException {
 
 
 @FXML
+void btnHSimple(MouseEvent event) {
+        HS = 1 * countHSimple.getValue();
+        txtPedido.appendText("Hamburguesa simple\n" );
+        txtCant.appendText(String.valueOf(countHSimple.getValue())+"\n" );
+        txtPrice.appendText("$"+HS+"\n");
+}
+
+
+@FXML
+void btnBBinaria(MouseEvent event) {
+        BB = 1.75 * countBBinaria.getValue();
+        txtPedido.appendText("Hamburguesa Binaria\n");
+        txtCant.appendText(String.valueOf(countBBinaria.getValue())+"\n");
+        txtPrice.appendText("$"+BB+"\n");
+}
+
+@FXML
+void btnBDieta(MouseEvent event) {
+        BD = 1.75 * countD.getValue();
+        txtPedido.appendText("Coca-Cola Diet\n");
+        txtCant.appendText(String.valueOf(countD.getValue())+"\n");
+        txtPrice.appendText("$"+BD+"\n");
+}
+
+@FXML
+void btnCCola(MouseEvent event) {
+        CC = 1.5 * countCC.getValue();
+        txtPedido.appendText("Coca-Cola\n");
+        txtCant.appendText(String.valueOf(countCC.getValue())+"\n");
+        txtPrice.appendText("$"+CC+"\n");
+
+}
+
+@FXML
+void btnFanta(MouseEvent event) {
+        F = 1.5 * countF.getValue();
+        txtPedido.appendText("Fanta\n");
+        txtCant.appendText(String.valueOf(countF.getValue())+"\n");
+        txtPrice.appendText("$"+F+"\n");
+
+}
+
+@FXML
+void btnHDoble(MouseEvent event) {
+        HD = 2.25 * countHDoble.getValue();
+        txtPedido.appendText("Hamburguesa Doble\n");
+        txtCant.appendText(String.valueOf(countHDoble.getValue())+"\n");
+        txtPrice.appendText("$"+HD+"\n");
+
+}
+
+@FXML
+void btnJBurguer(MouseEvent event) {
+        JB = 2.5 * countJBurguer.getValue();
+        txtPedido.appendText("Java Burguer\n");
+        txtCant.appendText(String.valueOf(countJBurguer.getValue())+"\n");
+        txtPrice.appendText("$"+JB+"\n");
+}
+
+@FXML
+void btnMPapas(MouseEvent event) {
+        MP = 1.5 * countMPapas.getValue();
+        txtPedido.appendText("Molli Papas\n");
+        txtCant.appendText(String.valueOf(countMPapas.getValue())+"\n");
+        txtPrice.appendText("$"+MP+"\n");
+
+}
+
+@FXML
+void btnPBurguer(MouseEvent event) {
+        PB = 2.5 * countPBurguer.getValue();
+        txtPedido.appendText("PrograBurguer\n");
+        txtCant.appendText(String.valueOf(countPBurguer.getValue())+"\n");
+        txtPrice.appendText("$"+PB+"\n");
+}
+
+@FXML
+void btnPGrandes(MouseEvent event) {
+        PG = 2 * countPGrandes.getValue();
+        txtPedido.appendText("Papas Grandes\n");
+        txtCant.appendText(String.valueOf(countPGrandes.getValue())+"\n");
+        txtPrice.appendText("$"+PG+"\n");
+
+}
+
+@FXML
+void btnPMedianas(MouseEvent event) {
+        PM = 1.5 * countPMedianas.getValue();
+        txtPedido.appendText("Papas Medianas\n");
+        txtCant.appendText(String.valueOf(countPMedianas.getValue())+"\n");
+        txtPrice.appendText("$"+PM+"\n");
+}
+
+@FXML
+void btnPPequenas(MouseEvent event) {
+        PP = 1.25 * countPPequenas.getValue();
+        txtPedido.appendText("Papas Pequeñas\n");
+        txtCant.appendText(String.valueOf(countPPequenas.getValue())+"\n");
+        txtPrice.appendText("$"+PP+"\n");
+
+}
+
+@FXML
+void btnPepsi(MouseEvent event) {
+        P = 1.5 * countP.getValue();
+        txtPedido.appendText("Pepsi\n");
+        txtCant.appendText(String.valueOf(countP.getValue())+"\n");
+        txtPrice.appendText("$"+P+"\n");
+}
+
+@FXML
+void btnSPapa(MouseEvent event) {
+        SP = 1 * countSPapa.getValue();
+        txtPedido.appendText("SalchiPapa\n");
+        txtCant.appendText(String.valueOf(countSPapa.getValue())+"\n");
+        txtPrice.appendText("$"+SP+"\n");
+
+}
+
+@FXML
+void btnSprite(MouseEvent event) {
+        S = 1 * countS.getValue();
+        txtPedido.appendText("Sprite\n");
+        txtCant.appendText(String.valueOf(countS.getValue())+"\n");
+        txtPrice.appendText("$"+S+"\n");
+}
+
+@FXML
 void sumarPedidos(ActionEvent event) {
         Double suma = HS+BB+CC+BD+F+HD+JB+MP+P+PB+PG+PM+PP+S+SP;
         String total = suma.toString();
@@ -192,218 +322,21 @@ public void showTime() {
 public void initialize(URL arg0, ResourceBundle arg1) {
         showTime();
         
-        SpinnerValueFactory<Integer> valueSimple = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 50);
-        valueSimple.setValue(0);
         countHSimple.setValueFactory(valueSimple);
-        countHSimple.valueProperty().addListener((obs, oldValue, newValue) -> {
-        HS = 1*newValue;
-        txtPedido.setText("");
-        txtCant.setText("");
-        txtPrice.setText("");
-                txtPedido.appendText("Hamburguesa simple\n" );
-                txtCant.appendText(Integer.toString(newValue)+"\n");
-                txtPrice.appendText("$"+HS+"\n");
-                txtPedido.isWrapText();
-                txtCant.isWrapText();
-                txtPrice.isWrapText();
-        });
-        
-        
-        SpinnerValueFactory<Integer> valueBinaria = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 50);
-        valueBinaria.setValue(0);
         countBBinaria.setValueFactory(valueBinaria);
-        countBBinaria.valueProperty().addListener((obs, oldValue, newValue) ->  {
-        BB = 1.75*newValue;
-        
-        txtPedido.setText("");
-        txtCant.setText("");
-        txtPrice.setText("");
-                txtPedido.appendText("Burguer Binaria\n" );
-                txtCant.appendText(Integer.toString(newValue)+"\n");
-                txtPrice.appendText("$"+BB+"\n");
-                txtPedido.isWrapText();
-                txtCant.isWrapText();
-                txtPrice.isWrapText();    
-        });
-
-
-        SpinnerValueFactory<Integer> valueCC = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 50);
-        valueCC.setValue(0);
         countCC.setValueFactory(valueCC);
-        countCC.valueProperty().addListener((obs, oldValue, newValue) ->  {
-        CC = 1.5*newValue;
-                txtPedido.setText("");
-                txtCant.setText("");
-                txtPrice.setText("");
-                txtPedido.appendText("CocaCola\n" );
-                txtCant.appendText(Integer.toString(newValue)+"\n");
-                txtPrice.appendText("$"+CC+"\n");
-        });
-
-        SpinnerValueFactory<Integer> valueD = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 50);
-        valueD.setValue(0);
-        countD.setValueFactory(valueD);
-        countD.valueProperty().addListener((obs, oldValue, newValue) ->  {
-        BD = 1.75*newValue;    
-                txtPedido.setText("");
-                txtCant.setText("");
-                txtPrice.setText("");
-                txtPedido.appendText("Bebida dietetica\n" );
-                txtCant.appendText(Integer.toString(newValue)+"\n");
-                txtPrice.appendText("$"+BD+"\n");  
-        });        
-
-
-        SpinnerValueFactory<Integer> valueF = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 50);
-        valueF.setValue(0);
+        countD.setValueFactory(valueD);        
         countF.setValueFactory(valueF);
-        countF.valueProperty().addListener((obs, oldValue, newValue) ->  {
-        F = 1.50*newValue;    
-                txtPedido.setText("");
-                txtCant.setText("");
-                txtPrice.setText("");
-                txtPedido.appendText("Fanta\n" );
-                txtCant.appendText(Integer.toString(newValue)+"\n");
-                txtPrice.appendText("$"+F+"\n"); 
-        });          
-        
-
-        SpinnerValueFactory<Integer> valueHD = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 50);
-        valueHD.setValue(0);
-        countHDoble.setValueFactory(valueHD);
-        countHDoble.valueProperty().addListener((obs, oldValue, newValue) ->   {
-        HD = 2.25*newValue; 
-                txtPedido.setText("");
-                txtCant.setText("");
-                txtPrice.setText("");
-                txtPedido.appendText("Hamburguesa Doble\n" );
-                txtCant.appendText(Integer.toString(newValue)+"\n");
-                txtPrice.appendText("$"+HD+"\n");  
-        }); 
-
-        SpinnerValueFactory<Integer> valueJB = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 50);
-        valueJB.setValue(0);
-        countJBurguer.setValueFactory(valueJB);
-        countJBurguer.valueProperty().addListener((obs, oldValue, newValue) ->   {
-        JB = 2.50*newValue; 
-                txtPedido.setText("");
-                txtCant.setText("");
-                txtPrice.setText("");
-                txtPedido.appendText("JavaBurguer\n" );
-                txtCant.appendText(Integer.toString(newValue)+"\n");
-                txtPrice.appendText("$"+JB+"\n"); 
-        }); 
-
-        SpinnerValueFactory<Integer> valueMP = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 50);
-        valueMP.setValue(0);
-        countMPapas.setValueFactory(valueMP);
-        countMPapas.valueProperty().addListener((obs, oldValue, newValue) ->  {
-        MP = 1.50*newValue; 
-                txtPedido.setText("");
-                txtCant.setText("");
-                txtPrice.setText("");
-                txtPedido.appendText("MolliPapas\n" );
-                txtCant.appendText(Integer.toString(newValue)+"\n");
-                txtPrice.appendText("$"+MP+"\n");  
-        }); 
-        
-
-        SpinnerValueFactory<Integer> valueP = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 50);
-        valueP.setValue(0);
+        countHDoble.setValueFactory(valueHDoble);
+        countJBurguer.setValueFactory(valueJBurguer);
+        countMPapas.setValueFactory(valueMPapas);
         countP.setValueFactory(valueP);
-        countP.valueProperty().addListener((obs, oldValue, newValue) -> {
-        P = 1.50*newValue;  
-                txtPedido.setText("");
-                txtCant.setText("");
-                txtPrice.setText("");
-                txtPedido.appendText("Pepsi\n" );
-                txtCant.appendText(Integer.toString(newValue)+"\n");
-                txtPrice.appendText("$"+P+"\n");
-                
-        }); 
-        
-
-        SpinnerValueFactory<Integer> valuePB = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 50);
-        valuePB.setValue(0);
-        countPBurguer.setValueFactory(valuePB);
-        countPBurguer.valueProperty().addListener((obs, oldValue, newValue) -> {
-        PB = 2.50*newValue;
-                txtPedido.setText("");
-                txtCant.setText("");
-                txtPrice.setText("");
-                txtPedido.appendText("PrograBurguer\n" );
-                txtCant.appendText(Integer.toString(newValue)+"\n");
-                txtPrice.appendText("$"+PB+"\n"); 
-        }); 
-        
-
-        SpinnerValueFactory<Integer> valuePG = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 50);
-        valuePG.setValue(0);
-        countPGrandes.setValueFactory(valuePG);
-        countPGrandes.valueProperty().addListener((obs, oldValue, newValue) ->  {
-        PG = 2.00*newValue;
-                txtPedido.setText("");
-                txtCant.setText("");
-                txtPrice.setText("");
-                txtPedido.appendText("Papas Grandes\n" );
-                txtCant.appendText(Integer.toString(newValue)+"\n");
-                txtPrice.appendText("$"+PG+"\n");  
-        }); 
-        
-
-        SpinnerValueFactory<Integer> valuePM = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 50);
-        valuePM.setValue(0);
-        countPMedianas.setValueFactory(valuePM);
-        countPMedianas.valueProperty().addListener((obs, oldValue, newValue) -> {
-        PM = 1.50*newValue;
-                txtPedido.setText("");
-                txtCant.setText("");
-                txtPrice.setText("");
-                txtPedido.appendText("Papas Medianas\n" );
-                txtCant.appendText(Integer.toString(newValue)+"\n");
-                txtPrice.appendText("$"+PM+"\n");  
-        }); 
-        
-
-        SpinnerValueFactory<Integer> valuePP = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 50);
-        valuePP.setValue(0);
-        countPPequenas.setValueFactory(valuePP);
-        countPPequenas.valueProperty().addListener((obs, oldValue, newValue) ->{
-        PP = 1.50*newValue;
-                txtPedido.setText("");
-                txtCant.setText("");
-                txtPrice.setText("");  
-                txtPedido.appendText("Papas Pequeñas \n");
-                txtCant.appendText(Integer.toString(newValue)+"\n");
-                txtPrice.appendText("$"+PP+"\n");
-        }); 
-        
-
-        SpinnerValueFactory<Integer> valueS = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 50);
-        valueS.setValue(0);
+        countPBurguer.setValueFactory(valuePBurguer);
+        countPGrandes.setValueFactory(valuePGrandes);
+        countPMedianas.setValueFactory(valuePMedianas);
+        countPPequenas.setValueFactory(valuePPequenas);
         countS.setValueFactory(valueS);
-        countS.valueProperty().addListener((obs, oldValue, newValue) ->  {
-        S = 1.00*newValue;
-                txtPedido.setText("");
-                txtCant.setText("");
-                txtPrice.setText("");
-                txtPedido.appendText("Sprite \n");
-                txtCant.appendText(Integer.toString(newValue)+"\n");
-                txtPrice.appendText("$"+S+"\n");
-        }); 
-
-        SpinnerValueFactory<Integer> valueSP = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 50);
-        valueSP.setValue(0);
-        countSPapa.setValueFactory(valueSP);
-        countSPapa.valueProperty().addListener((obs, oldValue, newValue) ->  {
-        SP = 1.00*newValue;
-                txtPedido.setText("");
-                txtCant.setText("");
-                txtPrice.setText("");
-                txtPedido.appendText("SalchiPapa\n");
-                txtCant.appendText(Integer.toString(newValue)+"\n");
-                txtPrice.appendText("$"+SP+"\n");
-        }); 
+        countSPapa.setValueFactory(valueSPapa);
 }
 
 public void displayDatos(String usuario, String nombre, String ci, String direccion, String phone, String fecha) {

@@ -153,7 +153,7 @@ public class LastSceneController {
         Paragraph fin = new Paragraph("\n\n                                                                                   TOTAL: "+"$ "+total+"\n",
                                         FontFactory.getFont("arial",
                                         14,
-                                        Font.NORMAL,
+                                        Font.ITALIC,
                                         BaseColor.BLACK)
         );
 

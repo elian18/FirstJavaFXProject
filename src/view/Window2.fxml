@@ -26,7 +26,7 @@
          <children>
             <ImageView fitHeight="69.0" fitWidth="200.0" layoutX="424.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@images/WhatsApp_Image_2022-06-19_at_9.04.48_PM-removebg-preview.png" />
+                  <Image url="@images/Prograburguers.png" />
                </image>
             </ImageView>
             <Button layoutX="26.0" layoutY="13.0" mnemonicParsing="false" onAction="#showWindow1" prefHeight="33.0" prefWidth="124.0" style="-fx-background-color: #ffffff;" text="Salir" textFill="#143816">
@@ -59,92 +59,92 @@
          <content>
             <Pane prefHeight="622.0" prefWidth="658.0">
                <children>
-                  <ImageView fitHeight="85.0" fitWidth="115.0" layoutX="49.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="85.0" fitWidth="115.0" layoutX="49.0" layoutY="21.0" onMouseClicked="#btnHSimple" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/Hamburger-PNG-HD.png" />
                      </image>
                   </ImageView>
                   <Label layoutX="53.0" layoutY="111.0" text="Hamburguesa Simple" />
-                  <ImageView fitHeight="130.0" fitWidth="154.0" layoutX="268.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="130.0" fitWidth="154.0" layoutX="268.0" layoutY="-2.0" onMouseClicked="#btnPPequenas" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/585ac0544f6ae202fedf2939.png" />
                      </image>
                   </ImageView>
                   <Label layoutX="291.0" layoutY="111.0" text="Papas Pequeñas" />
                   <Spinner fx:id="countHSimple" editable="true" layoutX="166.0" layoutY="54.0" prefHeight="25.0" prefWidth="57.0" />
-                  <ImageView fitHeight="89.0" fitWidth="124.0" layoutX="55.0" layoutY="144.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="89.0" fitWidth="124.0" layoutX="55.0" layoutY="144.0" onMouseClicked="#btnHDoble" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/png-clipart-hamburger-hamburger-food.png" />
                      </image>
                   </ImageView>
                   <Label layoutX="53.0" layoutY="236.0" text="Hamburguesa doble" />
-                  <ImageView fitHeight="103.0" fitWidth="139.0" layoutX="33.0" layoutY="249.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="103.0" fitWidth="139.0" layoutX="33.0" layoutY="249.0" onMouseClicked="#btnBBinaria" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/Burger-Free-PNG.png" />
                      </image>
                   </ImageView>
                   <Label layoutX="65.0" layoutY="354.0" text="BurguerBinaria" />
-                  <ImageView fitHeight="89.0" fitWidth="99.0" layoutX="57.0" layoutY="369.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="89.0" fitWidth="99.0" layoutX="57.0" layoutY="369.0" onMouseClicked="#btnJBurguer" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/588248b2e81acb96424ffab0.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="111.0" fitWidth="124.0" layoutX="274.0" layoutY="138.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="111.0" fitWidth="124.0" layoutX="274.0" layoutY="138.0" onMouseClicked="#btnPMedianas" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/French-Fries-PNG-Image.png" />
                      </image>
                   </ImageView>
                   <Label layoutX="286.0" layoutY="225.0" text="Papas Medianas" />
-                  <ImageView fitHeight="111.0" fitWidth="124.0" layoutX="278.0" layoutY="258.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="111.0" fitWidth="124.0" layoutX="278.0" layoutY="258.0" onMouseClicked="#btnPGrandes" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/585abfc54f6ae202fedf2935.png" />
                      </image>
                   </ImageView>
                   <Label layoutX="294.0" layoutY="348.0" text="Papas Grandes" />
-                  <ImageView fitHeight="102.0" fitWidth="138.0" layoutX="282.0" layoutY="362.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="102.0" fitWidth="138.0" layoutX="282.0" layoutY="362.0" onMouseClicked="#btnMPapas" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/mollipapas.png" />
                      </image>
                   </ImageView>
                   <Label layoutX="300.0" layoutY="457.0" text="MolliPapas" />
-                  <ImageView fitHeight="80.0" fitWidth="118.0" layoutX="265.0" layoutY="474.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="80.0" fitWidth="118.0" layoutX="265.0" layoutY="474.0" onMouseClicked="#btnSPapa" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/PicsArt_22-07-07_22-43-08-682.png" />
                      </image>
                   </ImageView>
                   <Label layoutX="301.0" layoutY="555.0" text="SalchiPapa" />
                   <Label layoutX="68.0" layoutY="457.0" text="Java Burguer" />
-                  <ImageView fitHeight="89.0" fitWidth="102.0" layoutX="49.0" layoutY="474.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="89.0" fitWidth="102.0" layoutX="49.0" layoutY="474.0" onMouseClicked="#btnPBurguer" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/580b57fcd9996e24bc43c1a8.png" />
                      </image>
                   </ImageView>
                   <Label layoutX="65.0" layoutY="563.0" text="PrograBurguer" />
-                  <ImageView fitHeight="105.0" fitWidth="99.0" layoutX="483.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="105.0" fitWidth="99.0" layoutX="483.0" layoutY="17.0" onMouseClicked="#btnCCola" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/580b57fbd9996e24bc43c0de.png" />
                      </image>
                   </ImageView>
                   <Label layoutX="514.0" layoutY="130.0" prefHeight="17.0" prefWidth="55.0" text="CocaCola" />
-                  <ImageView fitHeight="82.0" fitWidth="85.0" layoutX="490.0" layoutY="169.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="82.0" fitWidth="85.0" layoutX="490.0" layoutY="169.0" onMouseClicked="#btnFanta" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/580b57fbd9996e24bc43c10f.png" />
                      </image>
                   </ImageView>
                   <Label layoutX="516.0" layoutY="240.0" prefHeight="17.0" prefWidth="34.0" text="Fanta" />
-                  <ImageView fitHeight="84.0" fitWidth="58.0" layoutX="504.0" layoutY="273.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="84.0" fitWidth="58.0" layoutX="504.0" layoutY="273.0" onMouseClicked="#btnPepsi" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/Soda-PNG-File.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="69.0" fitWidth="71.0" layoutX="499.0" layoutY="389.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="69.0" fitWidth="71.0" layoutX="499.0" layoutY="389.0" onMouseClicked="#btnSprite" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/580b57fcd9996e24bc43c1ed%20(1).png" />
                      </image>
                   </ImageView>
                   <Label layoutX="519.0" layoutY="354.0" text="Pepsi" />
                   <Label layoutX="518.0" layoutY="466.0" text="Sprite" />
-                  <ImageView fitHeight="111.0" fitWidth="99.0" layoutX="483.0" layoutY="474.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="111.0" fitWidth="99.0" layoutX="483.0" layoutY="474.0" onMouseClicked="#btnBDieta" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/Can-Soda-PNG-Clipart.png" />
                      </image>
