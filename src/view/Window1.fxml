@@ -73,6 +73,6 @@
             <Image url="@images/joinesgifimage-1387013.gif" />
          </image>
       </ImageView>
-      <PasswordField fx:id="txtPasword" layoutX="716.0" layoutY="295.0" onKeyTyped="#eventKey" promptText="Contraseña" />
+      <PasswordField fx:id="txtPassword" layoutX="716.0" layoutY="295.0" onKeyTyped="#eventKey" promptText="Contraseña" />
    </children>
 </AnchorPane>

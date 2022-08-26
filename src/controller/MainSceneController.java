@@ -167,7 +167,6 @@ void btnHSimple(MouseEvent event) {
         txtPrice.appendText("$"+HS+"\n");
 }
 
-
 @FXML
 void btnBBinaria(MouseEvent event) {
         BB = 1.75 * countBBinaria.getValue();
@@ -347,13 +346,6 @@ public void displayDatos(String usuario, String nombre, String ci, String direcc
         txtPhone.setText(phone);
         labelFecha.setText(fecha);
 
-}
-
-public void displayPedido(String cantidad, String pedido, String precio, String total) {
-        txtCant.setText(cantidad);
-        txtPedido.setText(pedido);
-        txtPrice.setText(precio);
-        lblTotal.setText(total);
 }
 
 public void display(String usuario, String fecha) {

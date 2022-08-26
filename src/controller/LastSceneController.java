@@ -62,19 +62,12 @@ public class LastSceneController {
         String ci = lblCI.getText();
         String direccion = lblDireccion.getText();
         String phone = lblPhone.getText();
-
-        String cantidad = txtMostrarCantidad.getText();
-        String pedido = txtMostrarPedido.getText();
-        String precio = txtMostrarPrecio.getText();
-        String total = txtMostrarTotal.getText();
-
         String fecha = String.format("%s", LocalDate.now());
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Window2.fxml"));
         Parent viewParent = loader.load();
         MainSceneController mainSceneController = loader.getController();
         mainSceneController.displayDatos(usuario, nombre, ci, direccion, phone, fecha);
-        mainSceneController.displayPedido(cantidad, pedido, precio, total);
         Scene viewScene = new Scene(viewParent);
         Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
         window.setScene(viewScene);

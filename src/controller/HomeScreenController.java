@@ -22,7 +22,7 @@ public class HomeScreenController {
     private TextField txtUser;
     
     @FXML
-    private PasswordField txtPasword;
+    private PasswordField txtPassword;
 
 
     @FXML
@@ -35,7 +35,7 @@ public class HomeScreenController {
             {
                 event.consume();
             }
-        }else if(evt.equals(txtPasword))
+        }else if(evt.equals(txtPassword))
         {
             if(event.getCharacter().equals(" "))
             {
@@ -50,9 +50,9 @@ public class HomeScreenController {
      */
     @FXML
     void showWindow2(ActionEvent event) throws IOException {
-        if((txtUser.getText().equals("elian18") && txtPasword.getText().equals("elian") )||  
-        (txtUser.getText().equals("SebasRo17")&&txtPasword.getText().equals("sebas")) || 
-        (txtUser.getText().equals("JoRoX")&&txtPasword.getText().equals("epngood"))){
+        if((txtUser.getText().equals("elian18") && txtPassword.getText().equals("elian") )||  
+        (txtUser.getText().equals("SebasRo17")&&txtPassword.getText().equals("sebas")) || 
+        (txtUser.getText().equals("JoRoX")&&txtPassword.getText().equals("epngood"))){
             {//comparar inicio de sesion
                 String usuario = txtUser.getText();
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/Window2.fxml"));
