@@ -16,7 +16,16 @@ Proyecto de Programacion del Segundo Bimestre
 
 2. `view`: esta subcarpeta contiene los archivos FXML de las ventanas y las img
 
-* `lib`: la libreria usada en este proyecto fue JavaFX
+* `lib`: la libreria usada en este proyecto fue `JavaFX`, además para la creación del pdf se uso la libreria `iText 5`.
+
+___
+> `IMPORTANTE:`Para el uso del programa es necesario modificar el *json* de la siguiente manera:
+
+``` json
+"vmArgs": "--module-path \"C:/Java/javafx-sdk-18.0.1/lib\" --add-modules javafx.controls,javafx.fxml"
+```
+
+___
 
 ### Link GITHUB
 
